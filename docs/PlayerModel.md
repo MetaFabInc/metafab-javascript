@@ -1,4 +1,4 @@
-# MetafabJavascript.PlayerModel
+# Metafab.PlayerModel
 
 ## Properties
 

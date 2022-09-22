@@ -1,4 +1,4 @@
-# MetafabJavascript.ContractModel
+# Metafab.ContractModel
 
 ## Properties
 

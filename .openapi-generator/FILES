@@ -77,4 +77,3 @@ src/model/UpdateGameRequest.js
 src/model/UpdatePlayerRequest.js
 src/model/WalletModel.js
 src/model/WriteContractRequest.js
-test/model/SetCurrencyFeesRequest.spec.js

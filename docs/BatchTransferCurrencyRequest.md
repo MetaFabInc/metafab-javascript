@@ -1,4 +1,4 @@
-# MetafabJavascript.BatchTransferCurrencyRequest
+# Metafab.BatchTransferCurrencyRequest
 
 ## Properties
 

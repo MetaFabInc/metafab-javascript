@@ -1,4 +1,4 @@
-# MetafabJavascript.CreateCurrency200ResponseAllOfContractAllOf
+# Metafab.CreateCurrency200ResponseAllOfContractAllOf
 
 ## Properties
 

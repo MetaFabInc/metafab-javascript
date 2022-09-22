@@ -1,4 +1,4 @@
-# MetafabJavascript.CurrencyModel
+# Metafab.CurrencyModel
 
 ## Properties
 

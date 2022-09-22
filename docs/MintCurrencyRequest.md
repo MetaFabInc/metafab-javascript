@@ -1,4 +1,4 @@
-# MetafabJavascript.MintCurrencyRequest
+# Metafab.MintCurrencyRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MetafabJavascript.AuthPlayer200Response
+# Metafab.AuthPlayer200Response
 
 ## Properties
 

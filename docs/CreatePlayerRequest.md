@@ -1,4 +1,4 @@
-# MetafabJavascript.CreatePlayerRequest
+# Metafab.CreatePlayerRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MetafabJavascript.GetCurrencies200ResponseInner
+# Metafab.GetCurrencies200ResponseInner
 
 ## Properties
 

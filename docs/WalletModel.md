@@ -1,4 +1,4 @@
-# MetafabJavascript.WalletModel
+# Metafab.WalletModel
 
 ## Properties
 

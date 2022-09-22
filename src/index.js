@@ -56,9 +56,9 @@ import WalletsApi from './api/WalletsApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var MetafabJavascript = require('index'); // See note below*.
-* var xxxSvc = new MetafabJavascript.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new MetafabJavascript.Yyy(); // Construct a model instance.
+* var Metafab = require('index'); // See note below*.
+* var xxxSvc = new Metafab.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new Metafab.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -70,8 +70,8 @@ import WalletsApi from './api/WalletsApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new MetafabJavascript.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new MetafabJavascript.Yyy(); // Construct a model instance.
+* var xxxSvc = new Metafab.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new Metafab.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.

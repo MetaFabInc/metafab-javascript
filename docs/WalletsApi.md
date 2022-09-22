@@ -1,4 +1,4 @@
-# MetafabJavascript.WalletsApi
+# Metafab.WalletsApi
 
 All URIs are relative to *https://api.trymetafab.com*
 
@@ -20,9 +20,9 @@ Returns the current native token balance for all chains supported by MetaFab for
 ### Example
 
 ```javascript
-import MetafabJavascript from 'metafab-javascript';
+import Metafab from 'metafab';
 
-let apiInstance = new MetafabJavascript.WalletsApi();
+let apiInstance = new Metafab.WalletsApi();
 let walletId = "walletId_example"; // String | Any wallet id within the MetaFab ecosystem.
 apiInstance.getWalletBalances(walletId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -64,9 +64,9 @@ Returns an array of MetaFab initiated transactions performed by the provided wal
 ### Example
 
 ```javascript
-import MetafabJavascript from 'metafab-javascript';
+import Metafab from 'metafab';
 
-let apiInstance = new MetafabJavascript.WalletsApi();
+let apiInstance = new Metafab.WalletsApi();
 let walletId = "walletId_example"; // String | Any wallet id within the MetaFab ecosystem.
 apiInstance.getWalletTransactions(walletId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

@@ -1,4 +1,4 @@
-# MetafabJavascript.BurnCurrencyRequest
+# Metafab.BurnCurrencyRequest
 
 ## Properties
 

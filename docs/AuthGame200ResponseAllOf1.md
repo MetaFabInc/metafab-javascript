@@ -1,4 +1,4 @@
-# MetafabJavascript.AuthGame200ResponseAllOf1
+# Metafab.AuthGame200ResponseAllOf1
 
 ## Properties
 
