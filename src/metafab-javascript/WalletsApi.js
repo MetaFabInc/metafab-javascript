@@ -1,6 +1,6 @@
 /**
  * MetaFab API
- *  Complete MetaFab API references and guides can be found at: https://trymetafab.com
+ * Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: metafabproject@gmail.com
@@ -17,14 +17,14 @@ import TransactionModel from '../model/TransactionModel';
 
 /**
 * Wallets service.
-* @module api/WalletsApi
+* @module metafab-javascript/WalletsApi
 * @version 1.0.0
 */
 export default class WalletsApi {
 
     /**
     * Constructs a new WalletsApi. 
-    * @alias module:api/WalletsApi
+    * @alias module:metafab-javascript/WalletsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.

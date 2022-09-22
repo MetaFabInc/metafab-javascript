@@ -1,6 +1,6 @@
 /**
  * MetaFab API
- *  Complete MetaFab API references and guides can be found at: https://trymetafab.com
+ * Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: metafabproject@gmail.com
@@ -17,14 +17,14 @@ import TransactionModel from '../model/TransactionModel';
 
 /**
 * Transactions service.
-* @module api/TransactionsApi
+* @module metafab-javascript/TransactionsApi
 * @version 1.0.0
 */
 export default class TransactionsApi {
 
     /**
     * Constructs a new TransactionsApi. 
-    * @alias module:api/TransactionsApi
+    * @alias module:metafab-javascript/TransactionsApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.

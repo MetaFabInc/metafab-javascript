@@ -1,4 +1,4 @@
-# MetaFabApi.V1PlayersGetRequest
+# MetafabJavascript.V1PlayersGetRequest
 
 ## Properties
 

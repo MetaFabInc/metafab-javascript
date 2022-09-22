@@ -1,6 +1,6 @@
 /**
  * MetaFab API
- * Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com
+ *  Complete MetaFab API references and guides can be found at: https://trymetafab.com
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: metafabproject@gmail.com

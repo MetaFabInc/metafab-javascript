@@ -1,6 +1,6 @@
 /**
  * MetaFab API
- *  Complete MetaFab API references and guides can be found at: https://trymetafab.com
+ * Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: metafabproject@gmail.com
@@ -20,14 +20,14 @@ import V1PlayersPlayerIdPatchRequest from '../model/V1PlayersPlayerIdPatchReques
 
 /**
 * Players service.
-* @module api/PlayersApi
+* @module metafab-javascript/PlayersApi
 * @version 1.0.0
 */
 export default class PlayersApi {
 
     /**
     * Constructs a new PlayersApi. 
-    * @alias module:api/PlayersApi
+    * @alias module:metafab-javascript/PlayersApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.

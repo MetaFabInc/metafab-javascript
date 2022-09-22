@@ -1,4 +1,4 @@
-# MetaFabApi.V1ContractsContractIdWritesPostRequest
+# MetafabJavascript.V1ContractsContractIdWritesPostRequest
 
 ## Properties
 

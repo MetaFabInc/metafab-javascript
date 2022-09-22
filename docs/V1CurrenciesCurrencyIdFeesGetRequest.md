@@ -1,4 +1,4 @@
-# MetaFabApi.V1CurrenciesCurrencyIdFeesGetRequest
+# MetafabJavascript.V1CurrenciesCurrencyIdFeesGetRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MetaFabApi.V1CurrenciesGet200ResponseAllOfContract
+# MetafabJavascript.V1CurrenciesGet200ResponseAllOfContract
 
 ## Properties
 

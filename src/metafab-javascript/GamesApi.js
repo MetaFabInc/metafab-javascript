@@ -1,6 +1,6 @@
 /**
  * MetaFab API
- *  Complete MetaFab API references and guides can be found at: https://trymetafab.com
+ * Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: metafabproject@gmail.com
@@ -20,14 +20,14 @@ import V1GamesGetRequest from '../model/V1GamesGetRequest';
 
 /**
 * Games service.
-* @module api/GamesApi
+* @module metafab-javascript/GamesApi
 * @version 1.0.0
 */
 export default class GamesApi {
 
     /**
     * Constructs a new GamesApi. 
-    * @alias module:api/GamesApi
+    * @alias module:metafab-javascript/GamesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.

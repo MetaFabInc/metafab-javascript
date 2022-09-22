@@ -1,6 +1,6 @@
 /**
  * MetaFab API
- *  Complete MetaFab API references and guides can be found at: https://trymetafab.com
+ * Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: metafabproject@gmail.com
@@ -26,14 +26,14 @@ import V1CurrenciesGetRequest from '../model/V1CurrenciesGetRequest';
 
 /**
 * Currencies service.
-* @module api/CurrenciesApi
+* @module metafab-javascript/CurrenciesApi
 * @version 1.0.0
 */
 export default class CurrenciesApi {
 
     /**
     * Constructs a new CurrenciesApi. 
-    * @alias module:api/CurrenciesApi
+    * @alias module:metafab-javascript/CurrenciesApi
     * @class
     * @param {module:ApiClient} [apiClient] Optional API client implementation to use,
     * default to {@link module:ApiClient#instance} if unspecified.

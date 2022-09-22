@@ -1,4 +1,4 @@
-# MetaFabApi.V1CurrenciesGetRequest
+# MetafabJavascript.V1CurrenciesGetRequest
 
 ## Properties
 

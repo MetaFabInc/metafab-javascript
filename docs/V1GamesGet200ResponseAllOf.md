@@ -1,4 +1,4 @@
-# MetaFabApi.V1GamesGet200ResponseAllOf
+# MetafabJavascript.V1GamesGet200ResponseAllOf
 
 ## Properties
 

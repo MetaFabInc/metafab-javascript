@@ -1,4 +1,4 @@
-# MetaFabApi.V1CurrenciesCurrencyIdBatchTransfersPostRequest
+# MetafabJavascript.V1CurrenciesCurrencyIdBatchTransfersPostRequest
 
 ## Properties
 

@@ -1,8 +1,8 @@
 {
-  "name": "meta_fab_api",
+  "name": "metafab-javascript",
   "version": "1.0.0",
-  "description": "Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com",
-  "license": "Unlicense",
+  "description": " Complete MetaFab API references and guides can be found at: https://trymetafab.com",
+  "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",
@@ -11,9 +11,6 @@
   },
   "browser": {
     "fs": false
-  },
-  "publishConfig":{
-    "registry":"metafab-javascript"
   },
   "dependencies": {
     "@babel/cli": "^7.0.0",

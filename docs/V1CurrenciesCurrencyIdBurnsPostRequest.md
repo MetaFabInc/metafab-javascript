@@ -1,4 +1,4 @@
-# MetaFabApi.V1CurrenciesCurrencyIdBurnsPostRequest
+# MetafabJavascript.V1CurrenciesCurrencyIdBurnsPostRequest
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# MetaFabApi.V1ContractsGetRequest
+# MetafabJavascript.V1ContractsGetRequest
 
 ## Properties
 

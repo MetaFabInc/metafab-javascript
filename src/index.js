@@ -1,6 +1,6 @@
 /**
  * MetaFab API
- * Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com
+ *  Complete MetaFab API references and guides can be found at: https://trymetafab.com
  *
  * The version of the OpenAPI document: 1.0.0
  * Contact: metafabproject@gmail.com
@@ -51,14 +51,14 @@ import WalletsApi from './api/WalletsApi';
 
 
 /**
-* Documentation for the MetaFab API. Complete API references and guides can be found at: https://trymetafab.com.<br>
+*  Complete MetaFab API references and guides can be found at: https://trymetafab.com.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var MetaFabApi = require('index'); // See note below*.
-* var xxxSvc = new MetaFabApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new MetaFabApi.Yyy(); // Construct a model instance.
+* var MetafabJavascript = require('index'); // See note below*.
+* var xxxSvc = new MetafabJavascript.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new MetafabJavascript.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -70,8 +70,8 @@ import WalletsApi from './api/WalletsApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new MetaFabApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new MetaFabApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new MetafabJavascript.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new MetafabJavascript.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.

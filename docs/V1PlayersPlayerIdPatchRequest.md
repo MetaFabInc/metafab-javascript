@@ -1,4 +1,4 @@
-# MetaFabApi.V1PlayersPlayerIdPatchRequest
+# MetafabJavascript.V1PlayersPlayerIdPatchRequest
 
 ## Properties
 

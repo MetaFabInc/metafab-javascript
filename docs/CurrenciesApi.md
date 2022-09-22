@@ -1,4 +1,4 @@
-# MetaFabApi.CurrenciesApi
+# MetafabJavascript.CurrenciesApi
 
 All URIs are relative to *https://api.trymetafab.com*
 
@@ -27,9 +27,9 @@ Returns the current currency balance of the provided wallet address or or the wa
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
 let opts = {
   'address': 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D, // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
@@ -77,13 +77,13 @@ Transfers multiple amounts of currency to multiple provided wallet addresses or 
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
 let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
-let v1CurrenciesCurrencyIdBatchTransfersPostRequest = new MetaFabApi.V1CurrenciesCurrencyIdBatchTransfersPostRequest(); // V1CurrenciesCurrencyIdBatchTransfersPostRequest | 
+let v1CurrenciesCurrencyIdBatchTransfersPostRequest = new MetafabJavascript.V1CurrenciesCurrencyIdBatchTransfersPostRequest(); // V1CurrenciesCurrencyIdBatchTransfersPostRequest | 
 apiInstance.v1CurrenciesCurrencyIdBatchTransfersPost(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdBatchTransfersPostRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -127,13 +127,13 @@ Removes (burns) the provided amount of currency from the authenticating game or 
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
 let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
-let v1CurrenciesCurrencyIdBurnsPostRequest = new MetaFabApi.V1CurrenciesCurrencyIdBurnsPostRequest(); // V1CurrenciesCurrencyIdBurnsPostRequest | 
+let v1CurrenciesCurrencyIdBurnsPostRequest = new MetafabJavascript.V1CurrenciesCurrencyIdBurnsPostRequest(); // V1CurrenciesCurrencyIdBurnsPostRequest | 
 apiInstance.v1CurrenciesCurrencyIdBurnsPost(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdBurnsPostRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -177,9 +177,9 @@ Returns the current fee recipient address and fees of the currency for the provi
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
 apiInstance.v1CurrenciesCurrencyIdFeesGet(currencyId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -221,13 +221,13 @@ Sets the recipient address, basis points, fixed amount and cap amount for a curr
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
 let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
-let v1CurrenciesCurrencyIdFeesGetRequest = new MetaFabApi.V1CurrenciesCurrencyIdFeesGetRequest(); // V1CurrenciesCurrencyIdFeesGetRequest | 
+let v1CurrenciesCurrencyIdFeesGetRequest = new MetafabJavascript.V1CurrenciesCurrencyIdFeesGetRequest(); // V1CurrenciesCurrencyIdFeesGetRequest | 
 apiInstance.v1CurrenciesCurrencyIdFeesPost(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdFeesGetRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -271,13 +271,13 @@ Creates (mints) the provided amount of currency  to the provided wallet address 
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
 let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
-let v1CurrenciesCurrencyIdMintsPostRequest = new MetaFabApi.V1CurrenciesCurrencyIdMintsPostRequest(); // V1CurrenciesCurrencyIdMintsPostRequest | 
+let v1CurrenciesCurrencyIdMintsPostRequest = new MetafabJavascript.V1CurrenciesCurrencyIdMintsPostRequest(); // V1CurrenciesCurrencyIdMintsPostRequest | 
 apiInstance.v1CurrenciesCurrencyIdMintsPost(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdMintsPostRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -321,13 +321,13 @@ Transfers an amount of currency to the provided wallet address or wallet address
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
 let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
-let v1CurrenciesCurrencyIdTransfersPostRequest = new MetaFabApi.V1CurrenciesCurrencyIdTransfersPostRequest(); // V1CurrenciesCurrencyIdTransfersPostRequest | 
+let v1CurrenciesCurrencyIdTransfersPostRequest = new MetafabJavascript.V1CurrenciesCurrencyIdTransfersPostRequest(); // V1CurrenciesCurrencyIdTransfersPostRequest | 
 apiInstance.v1CurrenciesCurrencyIdTransfersPost(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdTransfersPostRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -371,9 +371,9 @@ Returns an array of active currencies for the game associated with the provided 
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let xGameKey = game_pk_4SOqpDi8pQdnQgfCOBW29qR8YmwOhxVPz5iHoMgUEJLDdPXgwLuHqZf8ewo2GajZ; // String | The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
 apiInstance.v1CurrenciesGet(xGameKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -415,12 +415,12 @@ Creates a new game currency and deploys an ERC20 token contract on behalf of the
 ### Example
 
 ```javascript
-import MetaFabApi from 'meta_fab_api';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new MetaFabApi.CurrenciesApi();
+let apiInstance = new MetafabJavascript.CurrenciesApi();
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
 let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
-let v1CurrenciesGetRequest = new MetaFabApi.V1CurrenciesGetRequest(); // V1CurrenciesGetRequest | 
+let v1CurrenciesGetRequest = new MetafabJavascript.V1CurrenciesGetRequest(); // V1CurrenciesGetRequest | 
 apiInstance.v1CurrenciesPost(xAuthorization, xPassword, v1CurrenciesGetRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
