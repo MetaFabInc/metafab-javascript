@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreatePlayerRequest model module.
  * @module model/CreatePlayerRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreatePlayerRequest {
     /**

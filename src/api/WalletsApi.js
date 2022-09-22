@@ -18,7 +18,7 @@ import TransactionModel from '../model/TransactionModel';
 /**
 * Wallets service.
 * @module api/WalletsApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class WalletsApi {
 

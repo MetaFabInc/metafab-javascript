@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The ContractModel model module.
  * @module model/ContractModel
- * @version 1.0.0
+ * @version 1.0.1
  */
 class ContractModel {
     /**

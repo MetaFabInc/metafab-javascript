@@ -17,7 +17,7 @@ import TransactionModel from './TransactionModel';
 /**
  * The CreateCurrency200ResponseAllOfContractAllOf model module.
  * @module model/CreateCurrency200ResponseAllOfContractAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateCurrency200ResponseAllOfContractAllOf {
     /**

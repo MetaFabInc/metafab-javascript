@@ -21,7 +21,7 @@ import WriteContractRequest from '../model/WriteContractRequest';
 /**
 * Contracts service.
 * @module api/ContractsApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class ContractsApi {
 

@@ -17,7 +17,7 @@ import CreateCurrency200ResponseAllOfContract from './CreateCurrency200ResponseA
 /**
  * The CreateCurrency200ResponseAllOf model module.
  * @module model/CreateCurrency200ResponseAllOf
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateCurrency200ResponseAllOf {
     /**

@@ -19,7 +19,7 @@ import GetCurrencies200ResponseInnerAllOf from './GetCurrencies200ResponseInnerA
 /**
  * The GetCurrencies200ResponseInner model module.
  * @module model/GetCurrencies200ResponseInner
- * @version 1.0.0
+ * @version 1.0.1
  */
 class GetCurrencies200ResponseInner {
     /**

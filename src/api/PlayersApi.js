@@ -21,7 +21,7 @@ import UpdatePlayerRequest from '../model/UpdatePlayerRequest';
 /**
 * Players service.
 * @module api/PlayersApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class PlayersApi {
 

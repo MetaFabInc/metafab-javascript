@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransferCurrencyRequest model module.
  * @module model/TransferCurrencyRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class TransferCurrencyRequest {
     /**

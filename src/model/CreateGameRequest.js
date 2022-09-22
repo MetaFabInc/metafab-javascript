@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateGameRequest model module.
  * @module model/CreateGameRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateGameRequest {
     /**

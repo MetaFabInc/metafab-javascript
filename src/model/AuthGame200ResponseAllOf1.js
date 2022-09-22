@@ -17,7 +17,7 @@ import WalletModel from './WalletModel';
 /**
  * The AuthGame200ResponseAllOf1 model module.
  * @module model/AuthGame200ResponseAllOf1
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AuthGame200ResponseAllOf1 {
     /**

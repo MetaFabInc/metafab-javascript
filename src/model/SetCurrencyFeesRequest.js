@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The SetCurrencyFeesRequest model module.
  * @module model/SetCurrencyFeesRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class SetCurrencyFeesRequest {
     /**

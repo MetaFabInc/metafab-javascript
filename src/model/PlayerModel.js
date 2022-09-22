@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The PlayerModel model module.
  * @module model/PlayerModel
- * @version 1.0.0
+ * @version 1.0.1
  */
 class PlayerModel {
     /**

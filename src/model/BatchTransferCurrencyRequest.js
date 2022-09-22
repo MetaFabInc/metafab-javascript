@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BatchTransferCurrencyRequest model module.
  * @module model/BatchTransferCurrencyRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class BatchTransferCurrencyRequest {
     /**

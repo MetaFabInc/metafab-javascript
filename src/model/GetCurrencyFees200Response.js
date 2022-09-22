@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The GetCurrencyFees200Response model module.
  * @module model/GetCurrencyFees200Response
- * @version 1.0.0
+ * @version 1.0.1
  */
 class GetCurrencyFees200Response {
     /**

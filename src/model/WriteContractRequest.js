@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The WriteContractRequest model module.
  * @module model/WriteContractRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class WriteContractRequest {
     /**

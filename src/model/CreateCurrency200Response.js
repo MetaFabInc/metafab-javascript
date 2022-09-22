@@ -19,7 +19,7 @@ import CurrencyModel from './CurrencyModel';
 /**
  * The CreateCurrency200Response model module.
  * @module model/CreateCurrency200Response
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateCurrency200Response {
     /**

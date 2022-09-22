@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The CreateContractRequest model module.
  * @module model/CreateContractRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class CreateContractRequest {
     /**

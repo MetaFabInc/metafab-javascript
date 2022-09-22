@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The UpdatePlayerRequest model module.
  * @module model/UpdatePlayerRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class UpdatePlayerRequest {
     /**

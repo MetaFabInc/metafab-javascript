@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The TransactionModel model module.
  * @module model/TransactionModel
- * @version 1.0.0
+ * @version 1.0.1
  */
 class TransactionModel {
     /**

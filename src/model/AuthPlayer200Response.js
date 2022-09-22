@@ -19,7 +19,7 @@ import WalletModel from './WalletModel';
 /**
  * The AuthPlayer200Response model module.
  * @module model/AuthPlayer200Response
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AuthPlayer200Response {
     /**

@@ -20,7 +20,7 @@ import WalletModel from './WalletModel';
 /**
  * The AuthGame200Response model module.
  * @module model/AuthGame200Response
- * @version 1.0.0
+ * @version 1.0.1
  */
 class AuthGame200Response {
     /**

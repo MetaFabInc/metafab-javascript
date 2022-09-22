@@ -27,7 +27,7 @@ import TransferCurrencyRequest from '../model/TransferCurrencyRequest';
 /**
 * Currencies service.
 * @module api/CurrenciesApi
-* @version 1.0.0
+* @version 1.0.1
 */
 export default class CurrenciesApi {
 

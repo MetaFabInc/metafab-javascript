@@ -16,7 +16,7 @@ import ApiClient from '../ApiClient';
 /**
  * The BurnCurrencyRequest model module.
  * @module model/BurnCurrencyRequest
- * @version 1.0.0
+ * @version 1.0.1
  */
 class BurnCurrencyRequest {
     /**
