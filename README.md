@@ -131,8 +131,8 @@ Class | Method | HTTP request | Description
 *MetafabJavascript.CurrenciesApi* | [**getCurrencyBalances**](docs/CurrenciesApi.md#getCurrencyBalances) | **GET** /v1/currencies/{currencyId}/balances | Get currency balance
 *MetafabJavascript.CurrenciesApi* | [**getCurrencyFees**](docs/CurrenciesApi.md#getCurrencyFees) | **GET** /v1/currencies/{currencyId}/fees | Get currency fees
 *MetafabJavascript.CurrenciesApi* | [**mintCurrency**](docs/CurrenciesApi.md#mintCurrency) | **POST** /v1/currencies/{currencyId}/mints | Mint currency
+*MetafabJavascript.CurrenciesApi* | [**setCurrencyFees**](docs/CurrenciesApi.md#setCurrencyFees) | **POST** /v1/currencies/{currencyId}/fees | Set currency fees
 *MetafabJavascript.CurrenciesApi* | [**transferCurrency**](docs/CurrenciesApi.md#transferCurrency) | **POST** /v1/currencies/{currencyId}/transfers | Transfer currency
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesCurrencyIdFeesPost**](docs/CurrenciesApi.md#v1CurrenciesCurrencyIdFeesPost) | **POST** /v1/currencies/{currencyId}/fees | Set currency fees
 *MetafabJavascript.GamesApi* | [**authGame**](docs/GamesApi.md#authGame) | **GET** /v1/games | Authenticate game
 *MetafabJavascript.GamesApi* | [**createGame**](docs/GamesApi.md#createGame) | **POST** /v1/games | Create game
 *MetafabJavascript.GamesApi* | [**updateGame**](docs/GamesApi.md#updateGame) | **PATCH** /v1/games/{gameId} | Update game
@@ -168,11 +168,11 @@ Class | Method | HTTP request | Description
  - [MetafabJavascript.GetCurrencyFees200Response](docs/GetCurrencyFees200Response.md)
  - [MetafabJavascript.MintCurrencyRequest](docs/MintCurrencyRequest.md)
  - [MetafabJavascript.PlayerModel](docs/PlayerModel.md)
+ - [MetafabJavascript.SetCurrencyFeesRequest](docs/SetCurrencyFeesRequest.md)
  - [MetafabJavascript.TransactionModel](docs/TransactionModel.md)
  - [MetafabJavascript.TransferCurrencyRequest](docs/TransferCurrencyRequest.md)
  - [MetafabJavascript.UpdateGameRequest](docs/UpdateGameRequest.md)
  - [MetafabJavascript.UpdatePlayerRequest](docs/UpdatePlayerRequest.md)
- - [MetafabJavascript.V1CurrenciesCurrencyIdFeesGetRequest](docs/V1CurrenciesCurrencyIdFeesGetRequest.md)
  - [MetafabJavascript.WalletModel](docs/WalletModel.md)
  - [MetafabJavascript.WriteContractRequest](docs/WriteContractRequest.md)
 

@@ -11,8 +11,8 @@ Method | HTTP request | Description
 [**getCurrencyBalances**](CurrenciesApi.md#getCurrencyBalances) | **GET** /v1/currencies/{currencyId}/balances | Get currency balance
 [**getCurrencyFees**](CurrenciesApi.md#getCurrencyFees) | **GET** /v1/currencies/{currencyId}/fees | Get currency fees
 [**mintCurrency**](CurrenciesApi.md#mintCurrency) | **POST** /v1/currencies/{currencyId}/mints | Mint currency
+[**setCurrencyFees**](CurrenciesApi.md#setCurrencyFees) | **POST** /v1/currencies/{currencyId}/fees | Set currency fees
 [**transferCurrency**](CurrenciesApi.md#transferCurrency) | **POST** /v1/currencies/{currencyId}/transfers | Transfer currency
-[**v1CurrenciesCurrencyIdFeesPost**](CurrenciesApi.md#v1CurrenciesCurrencyIdFeesPost) | **POST** /v1/currencies/{currencyId}/fees | Set currency fees
 
 
 
@@ -352,6 +352,56 @@ No authorization required
 - **Accept**: application/json
 
 
+## setCurrencyFees
+
+> TransactionModel setCurrencyFees(currencyId, xAuthorization, xPassword, setCurrencyFeesRequest)
+
+Set currency fees
+
+Sets the recipient address, basis points, fixed amount and cap amount for a currency&#39;s fees.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.CurrenciesApi();
+let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
+let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
+let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let setCurrencyFeesRequest = new MetafabJavascript.SetCurrencyFeesRequest(); // SetCurrencyFeesRequest | 
+apiInstance.setCurrencyFees(currencyId, xAuthorization, xPassword, setCurrencyFeesRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyId** | **String**| Any currency id within the MetaFab ecosystem. | 
+ **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
+ **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **setCurrencyFeesRequest** | [**SetCurrencyFeesRequest**](SetCurrencyFeesRequest.md)|  | 
+
+### Return type
+
+[**TransactionModel**](TransactionModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## transferCurrency
 
 > TransactionModel transferCurrency(currencyId, xAuthorization, xPassword, transferCurrencyRequest)
@@ -387,56 +437,6 @@ Name | Type | Description  | Notes
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
  **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
  **transferCurrencyRequest** | [**TransferCurrencyRequest**](TransferCurrencyRequest.md)|  | 
-
-### Return type
-
-[**TransactionModel**](TransactionModel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## v1CurrenciesCurrencyIdFeesPost
-
-> TransactionModel v1CurrenciesCurrencyIdFeesPost(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdFeesGetRequest)
-
-Set currency fees
-
-Sets the recipient address, basis points, fixed amount and cap amount for a currency&#39;s fees.
-
-### Example
-
-```javascript
-import MetafabJavascript from 'metafab-javascript';
-
-let apiInstance = new MetafabJavascript.CurrenciesApi();
-let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
-let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
-let v1CurrenciesCurrencyIdFeesGetRequest = new MetafabJavascript.V1CurrenciesCurrencyIdFeesGetRequest(); // V1CurrenciesCurrencyIdFeesGetRequest | 
-apiInstance.v1CurrenciesCurrencyIdFeesPost(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdFeesGetRequest).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **currencyId** | **String**| Any currency id within the MetaFab ecosystem. | 
- **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
- **v1CurrenciesCurrencyIdFeesGetRequest** | [**V1CurrenciesCurrencyIdFeesGetRequest**](V1CurrenciesCurrencyIdFeesGetRequest.md)|  | 
 
 ### Return type
 

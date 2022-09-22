@@ -35,11 +35,11 @@ import GetCurrencies200ResponseInnerAllOf from './model/GetCurrencies200Response
 import GetCurrencyFees200Response from './model/GetCurrencyFees200Response';
 import MintCurrencyRequest from './model/MintCurrencyRequest';
 import PlayerModel from './model/PlayerModel';
+import SetCurrencyFeesRequest from './model/SetCurrencyFeesRequest';
 import TransactionModel from './model/TransactionModel';
 import TransferCurrencyRequest from './model/TransferCurrencyRequest';
 import UpdateGameRequest from './model/UpdateGameRequest';
 import UpdatePlayerRequest from './model/UpdatePlayerRequest';
-import V1CurrenciesCurrencyIdFeesGetRequest from './model/V1CurrenciesCurrencyIdFeesGetRequest';
 import WalletModel from './model/WalletModel';
 import WriteContractRequest from './model/WriteContractRequest';
 import ContractsApi from './api/ContractsApi';
@@ -221,6 +221,12 @@ export {
     PlayerModel,
 
     /**
+     * The SetCurrencyFeesRequest model constructor.
+     * @property {module:model/SetCurrencyFeesRequest}
+     */
+    SetCurrencyFeesRequest,
+
+    /**
      * The TransactionModel model constructor.
      * @property {module:model/TransactionModel}
      */
@@ -243,12 +249,6 @@ export {
      * @property {module:model/UpdatePlayerRequest}
      */
     UpdatePlayerRequest,
-
-    /**
-     * The V1CurrenciesCurrencyIdFeesGetRequest model constructor.
-     * @property {module:model/V1CurrenciesCurrencyIdFeesGetRequest}
-     */
-    V1CurrenciesCurrencyIdFeesGetRequest,
 
     /**
      * The WalletModel model constructor.

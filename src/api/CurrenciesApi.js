@@ -20,9 +20,9 @@ import CreateCurrencyRequest from '../model/CreateCurrencyRequest';
 import GetCurrencies200ResponseInner from '../model/GetCurrencies200ResponseInner';
 import GetCurrencyFees200Response from '../model/GetCurrencyFees200Response';
 import MintCurrencyRequest from '../model/MintCurrencyRequest';
+import SetCurrencyFeesRequest from '../model/SetCurrencyFeesRequest';
 import TransactionModel from '../model/TransactionModel';
 import TransferCurrencyRequest from '../model/TransferCurrencyRequest';
-import V1CurrenciesCurrencyIdFeesGetRequest from '../model/V1CurrenciesCurrencyIdFeesGetRequest';
 
 /**
 * Currencies service.
@@ -463,6 +463,74 @@ export default class CurrenciesApi {
 
 
     /**
+     * Set currency fees
+     * Sets the recipient address, basis points, fixed amount and cap amount for a currency's fees.
+     * @param {String} currencyId Any currency id within the MetaFab ecosystem.
+     * @param {String} xAuthorization The `secretKey` of the authenticating game.
+     * @param {String} xPassword The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+     * @param {module:model/SetCurrencyFeesRequest} setCurrencyFeesRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TransactionModel} and HTTP response
+     */
+    setCurrencyFeesWithHttpInfo(currencyId, xAuthorization, xPassword, setCurrencyFeesRequest) {
+      let postBody = setCurrencyFeesRequest;
+      // verify the required parameter 'currencyId' is set
+      if (currencyId === undefined || currencyId === null) {
+        throw new Error("Missing the required parameter 'currencyId' when calling setCurrencyFees");
+      }
+      // verify the required parameter 'xAuthorization' is set
+      if (xAuthorization === undefined || xAuthorization === null) {
+        throw new Error("Missing the required parameter 'xAuthorization' when calling setCurrencyFees");
+      }
+      // verify the required parameter 'xPassword' is set
+      if (xPassword === undefined || xPassword === null) {
+        throw new Error("Missing the required parameter 'xPassword' when calling setCurrencyFees");
+      }
+      // verify the required parameter 'setCurrencyFeesRequest' is set
+      if (setCurrencyFeesRequest === undefined || setCurrencyFeesRequest === null) {
+        throw new Error("Missing the required parameter 'setCurrencyFeesRequest' when calling setCurrencyFees");
+      }
+
+      let pathParams = {
+        'currencyId': currencyId
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+        'X-Authorization': xAuthorization,
+        'X-Password': xPassword
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = TransactionModel;
+      return this.apiClient.callApi(
+        '/v1/currencies/{currencyId}/fees', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Set currency fees
+     * Sets the recipient address, basis points, fixed amount and cap amount for a currency's fees.
+     * @param {String} currencyId Any currency id within the MetaFab ecosystem.
+     * @param {String} xAuthorization The `secretKey` of the authenticating game.
+     * @param {String} xPassword The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+     * @param {module:model/SetCurrencyFeesRequest} setCurrencyFeesRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TransactionModel}
+     */
+    setCurrencyFees(currencyId, xAuthorization, xPassword, setCurrencyFeesRequest) {
+      return this.setCurrencyFeesWithHttpInfo(currencyId, xAuthorization, xPassword, setCurrencyFeesRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Transfer currency
      * Transfers an amount of currency to the provided wallet address or wallet address associated with the provided walletId. If you want to transfer to multiple wallets with different amounts and optional references in one API request, please see the Batch transfer currency documentation.  An optional reference may be included for the transfer. References are useful for identifying transfers intended to pay for items, trades, services and more.
      * @param {String} currencyId Any currency id within the MetaFab ecosystem.
@@ -524,74 +592,6 @@ export default class CurrenciesApi {
      */
     transferCurrency(currencyId, xAuthorization, xPassword, transferCurrencyRequest) {
       return this.transferCurrencyWithHttpInfo(currencyId, xAuthorization, xPassword, transferCurrencyRequest)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Set currency fees
-     * Sets the recipient address, basis points, fixed amount and cap amount for a currency's fees.
-     * @param {String} currencyId Any currency id within the MetaFab ecosystem.
-     * @param {String} xAuthorization The `secretKey` of the authenticating game.
-     * @param {String} xPassword The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
-     * @param {module:model/V1CurrenciesCurrencyIdFeesGetRequest} v1CurrenciesCurrencyIdFeesGetRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TransactionModel} and HTTP response
-     */
-    v1CurrenciesCurrencyIdFeesPostWithHttpInfo(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdFeesGetRequest) {
-      let postBody = v1CurrenciesCurrencyIdFeesGetRequest;
-      // verify the required parameter 'currencyId' is set
-      if (currencyId === undefined || currencyId === null) {
-        throw new Error("Missing the required parameter 'currencyId' when calling v1CurrenciesCurrencyIdFeesPost");
-      }
-      // verify the required parameter 'xAuthorization' is set
-      if (xAuthorization === undefined || xAuthorization === null) {
-        throw new Error("Missing the required parameter 'xAuthorization' when calling v1CurrenciesCurrencyIdFeesPost");
-      }
-      // verify the required parameter 'xPassword' is set
-      if (xPassword === undefined || xPassword === null) {
-        throw new Error("Missing the required parameter 'xPassword' when calling v1CurrenciesCurrencyIdFeesPost");
-      }
-      // verify the required parameter 'v1CurrenciesCurrencyIdFeesGetRequest' is set
-      if (v1CurrenciesCurrencyIdFeesGetRequest === undefined || v1CurrenciesCurrencyIdFeesGetRequest === null) {
-        throw new Error("Missing the required parameter 'v1CurrenciesCurrencyIdFeesGetRequest' when calling v1CurrenciesCurrencyIdFeesPost");
-      }
-
-      let pathParams = {
-        'currencyId': currencyId
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-        'X-Authorization': xAuthorization,
-        'X-Password': xPassword
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = TransactionModel;
-      return this.apiClient.callApi(
-        '/v1/currencies/{currencyId}/fees', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Set currency fees
-     * Sets the recipient address, basis points, fixed amount and cap amount for a currency's fees.
-     * @param {String} currencyId Any currency id within the MetaFab ecosystem.
-     * @param {String} xAuthorization The `secretKey` of the authenticating game.
-     * @param {String} xPassword The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
-     * @param {module:model/V1CurrenciesCurrencyIdFeesGetRequest} v1CurrenciesCurrencyIdFeesGetRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TransactionModel}
-     */
-    v1CurrenciesCurrencyIdFeesPost(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdFeesGetRequest) {
-      return this.v1CurrenciesCurrencyIdFeesPostWithHttpInfo(currencyId, xAuthorization, xPassword, v1CurrenciesCurrencyIdFeesGetRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
