@@ -4,14 +4,14 @@ All URIs are relative to *https://api.trymetafab.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1WalletsWalletIdBalancesGet**](WalletsApi.md#v1WalletsWalletIdBalancesGet) | **GET** /v1/wallets/{walletId}/balances | Get wallet balances
-[**v1WalletsWalletIdTransactionsGet**](WalletsApi.md#v1WalletsWalletIdTransactionsGet) | **GET** /v1/wallets/{walletId}/transactions | Get wallet transactions
+[**getWalletBalances**](WalletsApi.md#getWalletBalances) | **GET** /v1/wallets/{walletId}/balances | Get wallet balances
+[**getWalletTransactions**](WalletsApi.md#getWalletTransactions) | **GET** /v1/wallets/{walletId}/transactions | Get wallet transactions
 
 
 
-## v1WalletsWalletIdBalancesGet
+## getWalletBalances
 
-> {String: Number} v1WalletsWalletIdBalancesGet(walletId)
+> {String: Number} getWalletBalances(walletId)
 
 Get wallet balances
 
@@ -24,7 +24,7 @@ import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.WalletsApi();
 let walletId = "walletId_example"; // String | Any wallet id within the MetaFab ecosystem.
-apiInstance.v1WalletsWalletIdBalancesGet(walletId).then((data) => {
+apiInstance.getWalletBalances(walletId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -53,9 +53,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## v1WalletsWalletIdTransactionsGet
+## getWalletTransactions
 
-> [TransactionModel] v1WalletsWalletIdTransactionsGet(walletId)
+> [TransactionModel] getWalletTransactions(walletId)
 
 Get wallet transactions
 
@@ -68,7 +68,7 @@ import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.WalletsApi();
 let walletId = "walletId_example"; // String | Any wallet id within the MetaFab ecosystem.
-apiInstance.v1WalletsWalletIdTransactionsGet(walletId).then((data) => {
+apiInstance.getWalletTransactions(walletId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

@@ -4,63 +4,15 @@ All URIs are relative to *https://api.trymetafab.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1GamesGameIdPatch**](GamesApi.md#v1GamesGameIdPatch) | **PATCH** /v1/games/{gameId} | Update game
-[**v1GamesGet**](GamesApi.md#v1GamesGet) | **GET** /v1/games | Authenticate game
-[**v1GamesPost**](GamesApi.md#v1GamesPost) | **POST** /v1/games | Create game
+[**authGame**](GamesApi.md#authGame) | **GET** /v1/games | Authenticate game
+[**createGame**](GamesApi.md#createGame) | **POST** /v1/games | Create game
+[**updateGame**](GamesApi.md#updateGame) | **PATCH** /v1/games/{gameId} | Update game
 
 
 
-## v1GamesGameIdPatch
+## authGame
 
-> GameModel v1GamesGameIdPatch(gameId, xAuthorization, v1GamesGameIdPatchRequest)
-
-Update game
-
-Update various fields specific to a game. Such as changing its password, resetting its published or secret key, or updating its RPCs.
-
-### Example
-
-```javascript
-import MetafabJavascript from 'metafab-javascript';
-
-let apiInstance = new MetafabJavascript.GamesApi();
-let gameId = "gameId_example"; // String | Any game id within the MetaFab ecosystem.
-let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let v1GamesGameIdPatchRequest = new MetafabJavascript.V1GamesGameIdPatchRequest(); // V1GamesGameIdPatchRequest | 
-apiInstance.v1GamesGameIdPatch(gameId, xAuthorization, v1GamesGameIdPatchRequest).then((data) => {
-  console.log('API called successfully. Returned data: ' + data);
-}, (error) => {
-  console.error(error);
-});
-
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **gameId** | **String**| Any game id within the MetaFab ecosystem. | 
- **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **v1GamesGameIdPatchRequest** | [**V1GamesGameIdPatchRequest**](V1GamesGameIdPatchRequest.md)|  | 
-
-### Return type
-
-[**GameModel**](GameModel.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-
-## v1GamesGet
-
-> V1GamesGet200Response v1GamesGet()
+> AuthGame200Response authGame()
 
 Authenticate game
 
@@ -77,7 +29,7 @@ basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
 let apiInstance = new MetafabJavascript.GamesApi();
-apiInstance.v1GamesGet().then((data) => {
+apiInstance.authGame().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -91,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**V1GamesGet200Response**](V1GamesGet200Response.md)
+[**AuthGame200Response**](AuthGame200Response.md)
 
 ### Authorization
 
@@ -103,9 +55,9 @@ This endpoint does not need any parameter.
 - **Accept**: application/json
 
 
-## v1GamesPost
+## createGame
 
-> V1GamesGet200Response v1GamesPost(v1GamesGetRequest)
+> AuthGame200Response createGame(createGameRequest)
 
 Create game
 
@@ -117,8 +69,8 @@ Create a new game. A game is the root entity required for all API interactions. 
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.GamesApi();
-let v1GamesGetRequest = new MetafabJavascript.V1GamesGetRequest(); // V1GamesGetRequest | 
-apiInstance.v1GamesPost(v1GamesGetRequest).then((data) => {
+let createGameRequest = new MetafabJavascript.CreateGameRequest(); // CreateGameRequest | 
+apiInstance.createGame(createGameRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -131,11 +83,59 @@ apiInstance.v1GamesPost(v1GamesGetRequest).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **v1GamesGetRequest** | [**V1GamesGetRequest**](V1GamesGetRequest.md)|  | 
+ **createGameRequest** | [**CreateGameRequest**](CreateGameRequest.md)|  | 
 
 ### Return type
 
-[**V1GamesGet200Response**](V1GamesGet200Response.md)
+[**AuthGame200Response**](AuthGame200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## updateGame
+
+> GameModel updateGame(gameId, xAuthorization, updateGameRequest)
+
+Update game
+
+Update various fields specific to a game. Such as changing its password, resetting its published or secret key, or updating its RPCs.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.GamesApi();
+let gameId = "gameId_example"; // String | Any game id within the MetaFab ecosystem.
+let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
+let updateGameRequest = new MetafabJavascript.UpdateGameRequest(); // UpdateGameRequest | 
+apiInstance.updateGame(gameId, xAuthorization, updateGameRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gameId** | **String**| Any game id within the MetaFab ecosystem. | 
+ **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
+ **updateGameRequest** | [**UpdateGameRequest**](UpdateGameRequest.md)|  | 
+
+### Return type
+
+[**GameModel**](GameModel.md)
 
 ### Authorization
 

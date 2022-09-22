@@ -14,9 +14,9 @@
 
 import ApiClient from "../ApiClient";
 import ContractModel from '../model/ContractModel';
+import CreateContractRequest from '../model/CreateContractRequest';
 import TransactionModel from '../model/TransactionModel';
-import V1ContractsContractIdWritesPostRequest from '../model/V1ContractsContractIdWritesPostRequest';
-import V1ContractsGetRequest from '../model/V1ContractsGetRequest';
+import WriteContractRequest from '../model/WriteContractRequest';
 
 /**
 * Contracts service.
@@ -39,6 +39,108 @@ export default class ContractsApi {
 
 
     /**
+     * Create custom contract
+     * Create a MetaFab custom contract entry from an existing contract address and contract abi. This allows the game and players belonging to the authenticated game to interact with the contract's read and write functions through MetaFab's read and write contract endpoints.
+     * @param {String} xAuthorization The `secretKey` of the authenticating game.
+     * @param {module:model/CreateContractRequest} createContractRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContractModel} and HTTP response
+     */
+    createContractWithHttpInfo(xAuthorization, createContractRequest) {
+      let postBody = createContractRequest;
+      // verify the required parameter 'xAuthorization' is set
+      if (xAuthorization === undefined || xAuthorization === null) {
+        throw new Error("Missing the required parameter 'xAuthorization' when calling createContract");
+      }
+      // verify the required parameter 'createContractRequest' is set
+      if (createContractRequest === undefined || createContractRequest === null) {
+        throw new Error("Missing the required parameter 'createContractRequest' when calling createContract");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+        'X-Authorization': xAuthorization
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = ContractModel;
+      return this.apiClient.callApi(
+        '/v1/contracts', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create custom contract
+     * Create a MetaFab custom contract entry from an existing contract address and contract abi. This allows the game and players belonging to the authenticated game to interact with the contract's read and write functions through MetaFab's read and write contract endpoints.
+     * @param {String} xAuthorization The `secretKey` of the authenticating game.
+     * @param {module:model/CreateContractRequest} createContractRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContractModel}
+     */
+    createContract(xAuthorization, createContractRequest) {
+      return this.createContractWithHttpInfo(xAuthorization, createContractRequest)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Get contracts
+     * Returns an array of active contracts deployed by the game associated with the provided `X-Game-Key`.
+     * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ContractModel>} and HTTP response
+     */
+    getContractsWithHttpInfo(xGameKey) {
+      let postBody = null;
+      // verify the required parameter 'xGameKey' is set
+      if (xGameKey === undefined || xGameKey === null) {
+        throw new Error("Missing the required parameter 'xGameKey' when calling getContracts");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+        'X-Game-Key': xGameKey
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = [ContractModel];
+      return this.apiClient.callApi(
+        '/v1/contracts', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Get contracts
+     * Returns an array of active contracts deployed by the game associated with the provided `X-Game-Key`.
+     * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ContractModel>}
+     */
+    getContracts(xGameKey) {
+      return this.getContractsWithHttpInfo(xGameKey)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
      * Read contract data
      * Oftentimes you'll want to query and retrieve some data from a contract. This is incredibly easy to do for any contract deployed through MetaFab.  Using this endpoint, you can get the data returned by any readable function listed in a contracts ABI. This could be things like querying the totalSupply of a currency contract, the number of owners of an items contract, and more.
      * @param {String} contractId Any contract id within the MetaFab ecosystem.
@@ -47,16 +149,16 @@ export default class ContractsApi {
      * @param {String} opts.args A comma seperated list of basic data type arguments. This is optional and only necessary if the function being invoked requires arguments per the contract ABI. For example, `123,\"Hello\",false`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object} and HTTP response
      */
-    v1ContractsContractIdReadsGetWithHttpInfo(contractId, func, opts) {
+    readContractWithHttpInfo(contractId, func, opts) {
       opts = opts || {};
       let postBody = null;
       // verify the required parameter 'contractId' is set
       if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling v1ContractsContractIdReadsGet");
+        throw new Error("Missing the required parameter 'contractId' when calling readContract");
       }
       // verify the required parameter 'func' is set
       if (func === undefined || func === null) {
-        throw new Error("Missing the required parameter 'func' when calling v1ContractsContractIdReadsGet");
+        throw new Error("Missing the required parameter 'func' when calling readContract");
       }
 
       let pathParams = {
@@ -91,8 +193,8 @@ export default class ContractsApi {
      * @param {String} opts.args A comma seperated list of basic data type arguments. This is optional and only necessary if the function being invoked requires arguments per the contract ABI. For example, `123,\"Hello\",false`.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object}
      */
-    v1ContractsContractIdReadsGet(contractId, func, opts) {
-      return this.v1ContractsContractIdReadsGetWithHttpInfo(contractId, func, opts)
+    readContract(contractId, func, opts) {
+      return this.readContractWithHttpInfo(contractId, func, opts)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -105,26 +207,26 @@ export default class ContractsApi {
      * @param {String} contractId Any contract id within the MetaFab ecosystem.
      * @param {String} xAuthorization The `secretKey` of a specific game or the `accessToken` of a specific player.
      * @param {String} xPassword The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
-     * @param {module:model/V1ContractsContractIdWritesPostRequest} v1ContractsContractIdWritesPostRequest 
+     * @param {module:model/WriteContractRequest} writeContractRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TransactionModel} and HTTP response
      */
-    v1ContractsContractIdWritesPostWithHttpInfo(contractId, xAuthorization, xPassword, v1ContractsContractIdWritesPostRequest) {
-      let postBody = v1ContractsContractIdWritesPostRequest;
+    writeContractWithHttpInfo(contractId, xAuthorization, xPassword, writeContractRequest) {
+      let postBody = writeContractRequest;
       // verify the required parameter 'contractId' is set
       if (contractId === undefined || contractId === null) {
-        throw new Error("Missing the required parameter 'contractId' when calling v1ContractsContractIdWritesPost");
+        throw new Error("Missing the required parameter 'contractId' when calling writeContract");
       }
       // verify the required parameter 'xAuthorization' is set
       if (xAuthorization === undefined || xAuthorization === null) {
-        throw new Error("Missing the required parameter 'xAuthorization' when calling v1ContractsContractIdWritesPost");
+        throw new Error("Missing the required parameter 'xAuthorization' when calling writeContract");
       }
       // verify the required parameter 'xPassword' is set
       if (xPassword === undefined || xPassword === null) {
-        throw new Error("Missing the required parameter 'xPassword' when calling v1ContractsContractIdWritesPost");
+        throw new Error("Missing the required parameter 'xPassword' when calling writeContract");
       }
-      // verify the required parameter 'v1ContractsContractIdWritesPostRequest' is set
-      if (v1ContractsContractIdWritesPostRequest === undefined || v1ContractsContractIdWritesPostRequest === null) {
-        throw new Error("Missing the required parameter 'v1ContractsContractIdWritesPostRequest' when calling v1ContractsContractIdWritesPost");
+      // verify the required parameter 'writeContractRequest' is set
+      if (writeContractRequest === undefined || writeContractRequest === null) {
+        throw new Error("Missing the required parameter 'writeContractRequest' when calling writeContract");
       }
 
       let pathParams = {
@@ -156,113 +258,11 @@ export default class ContractsApi {
      * @param {String} contractId Any contract id within the MetaFab ecosystem.
      * @param {String} xAuthorization The `secretKey` of a specific game or the `accessToken` of a specific player.
      * @param {String} xPassword The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
-     * @param {module:model/V1ContractsContractIdWritesPostRequest} v1ContractsContractIdWritesPostRequest 
+     * @param {module:model/WriteContractRequest} writeContractRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TransactionModel}
      */
-    v1ContractsContractIdWritesPost(contractId, xAuthorization, xPassword, v1ContractsContractIdWritesPostRequest) {
-      return this.v1ContractsContractIdWritesPostWithHttpInfo(contractId, xAuthorization, xPassword, v1ContractsContractIdWritesPostRequest)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Get contracts
-     * Returns an array of active contracts deployed by the game associated with the provided `X-Game-Key`.
-     * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/ContractModel>} and HTTP response
-     */
-    v1ContractsGetWithHttpInfo(xGameKey) {
-      let postBody = null;
-      // verify the required parameter 'xGameKey' is set
-      if (xGameKey === undefined || xGameKey === null) {
-        throw new Error("Missing the required parameter 'xGameKey' when calling v1ContractsGet");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-        'X-Game-Key': xGameKey
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['application/json'];
-      let returnType = [ContractModel];
-      return this.apiClient.callApi(
-        '/v1/contracts', 'GET',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Get contracts
-     * Returns an array of active contracts deployed by the game associated with the provided `X-Game-Key`.
-     * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/ContractModel>}
-     */
-    v1ContractsGet(xGameKey) {
-      return this.v1ContractsGetWithHttpInfo(xGameKey)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Create custom contract
-     * Create a MetaFab custom contract entry from an existing contract address and contract abi. This allows the game and players belonging to the authenticated game to interact with the contract's read and write functions through MetaFab's read and write contract endpoints.
-     * @param {String} xAuthorization The `secretKey` of the authenticating game.
-     * @param {module:model/V1ContractsGetRequest} v1ContractsGetRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/ContractModel} and HTTP response
-     */
-    v1ContractsPostWithHttpInfo(xAuthorization, v1ContractsGetRequest) {
-      let postBody = v1ContractsGetRequest;
-      // verify the required parameter 'xAuthorization' is set
-      if (xAuthorization === undefined || xAuthorization === null) {
-        throw new Error("Missing the required parameter 'xAuthorization' when calling v1ContractsPost");
-      }
-      // verify the required parameter 'v1ContractsGetRequest' is set
-      if (v1ContractsGetRequest === undefined || v1ContractsGetRequest === null) {
-        throw new Error("Missing the required parameter 'v1ContractsGetRequest' when calling v1ContractsPost");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-        'X-Authorization': xAuthorization
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = ContractModel;
-      return this.apiClient.callApi(
-        '/v1/contracts', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Create custom contract
-     * Create a MetaFab custom contract entry from an existing contract address and contract abi. This allows the game and players belonging to the authenticated game to interact with the contract's read and write functions through MetaFab's read and write contract endpoints.
-     * @param {String} xAuthorization The `secretKey` of the authenticating game.
-     * @param {module:model/V1ContractsGetRequest} v1ContractsGetRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/ContractModel}
-     */
-    v1ContractsPost(xAuthorization, v1ContractsGetRequest) {
-      return this.v1ContractsPostWithHttpInfo(xAuthorization, v1ContractsGetRequest)
+    writeContract(contractId, xAuthorization, xPassword, writeContractRequest) {
+      return this.writeContractWithHttpInfo(contractId, xAuthorization, xPassword, writeContractRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

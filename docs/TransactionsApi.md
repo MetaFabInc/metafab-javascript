@@ -4,13 +4,13 @@ All URIs are relative to *https://api.trymetafab.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v1TransactionsTransactionIdGet**](TransactionsApi.md#v1TransactionsTransactionIdGet) | **GET** /v1/transactions/{transactionId} | Get transaction
+[**getTransaction**](TransactionsApi.md#getTransaction) | **GET** /v1/transactions/{transactionId} | Get transaction
 
 
 
-## v1TransactionsTransactionIdGet
+## getTransaction
 
-> TransactionModel v1TransactionsTransactionIdGet(transactionId)
+> TransactionModel getTransaction(transactionId)
 
 Get transaction
 
@@ -23,7 +23,7 @@ import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.TransactionsApi();
 let transactionId = "transactionId_example"; // String | Any transaction id within the MetaFab ecosystem.
-apiInstance.v1TransactionsTransactionIdGet(transactionId).then((data) => {
+apiInstance.getTransaction(transactionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);

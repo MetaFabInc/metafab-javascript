@@ -41,11 +41,11 @@ export default class WalletsApi {
      * @param {String} walletId Any wallet id within the MetaFab ecosystem.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Object.<String, {String: Number}>} and HTTP response
      */
-    v1WalletsWalletIdBalancesGetWithHttpInfo(walletId) {
+    getWalletBalancesWithHttpInfo(walletId) {
       let postBody = null;
       // verify the required parameter 'walletId' is set
       if (walletId === undefined || walletId === null) {
-        throw new Error("Missing the required parameter 'walletId' when calling v1WalletsWalletIdBalancesGet");
+        throw new Error("Missing the required parameter 'walletId' when calling getWalletBalances");
       }
 
       let pathParams = {
@@ -75,8 +75,8 @@ export default class WalletsApi {
      * @param {String} walletId Any wallet id within the MetaFab ecosystem.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Object.<String, {String: Number}>}
      */
-    v1WalletsWalletIdBalancesGet(walletId) {
-      return this.v1WalletsWalletIdBalancesGetWithHttpInfo(walletId)
+    getWalletBalances(walletId) {
+      return this.getWalletBalancesWithHttpInfo(walletId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -89,11 +89,11 @@ export default class WalletsApi {
      * @param {String} walletId Any wallet id within the MetaFab ecosystem.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link Array.<module:model/TransactionModel>} and HTTP response
      */
-    v1WalletsWalletIdTransactionsGetWithHttpInfo(walletId) {
+    getWalletTransactionsWithHttpInfo(walletId) {
       let postBody = null;
       // verify the required parameter 'walletId' is set
       if (walletId === undefined || walletId === null) {
-        throw new Error("Missing the required parameter 'walletId' when calling v1WalletsWalletIdTransactionsGet");
+        throw new Error("Missing the required parameter 'walletId' when calling getWalletTransactions");
       }
 
       let pathParams = {
@@ -123,8 +123,8 @@ export default class WalletsApi {
      * @param {String} walletId Any wallet id within the MetaFab ecosystem.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link Array.<module:model/TransactionModel>}
      */
-    v1WalletsWalletIdTransactionsGet(walletId) {
-      return this.v1WalletsWalletIdTransactionsGetWithHttpInfo(walletId)
+    getWalletTransactions(walletId) {
+      return this.getWalletTransactionsWithHttpInfo(walletId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

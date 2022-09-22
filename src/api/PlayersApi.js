@@ -13,10 +13,10 @@
 
 
 import ApiClient from "../ApiClient";
+import AuthPlayer200Response from '../model/AuthPlayer200Response';
+import CreatePlayerRequest from '../model/CreatePlayerRequest';
 import PlayerModel from '../model/PlayerModel';
-import V1PlayersGet200Response from '../model/V1PlayersGet200Response';
-import V1PlayersGetRequest from '../model/V1PlayersGetRequest';
-import V1PlayersPlayerIdPatchRequest from '../model/V1PlayersPlayerIdPatchRequest';
+import UpdatePlayerRequest from '../model/UpdatePlayerRequest';
 
 /**
 * Players service.
@@ -42,13 +42,13 @@ export default class PlayersApi {
      * Authenticate player
      * Returns an existing player object containing access token, wallet, and other details for a game when provided a valid username and password login using Basic Auth.
      * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/V1PlayersGet200Response} and HTTP response
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthPlayer200Response} and HTTP response
      */
-    v1PlayersGetWithHttpInfo(xGameKey) {
+    authPlayerWithHttpInfo(xGameKey) {
       let postBody = null;
       // verify the required parameter 'xGameKey' is set
       if (xGameKey === undefined || xGameKey === null) {
-        throw new Error("Missing the required parameter 'xGameKey' when calling v1PlayersGet");
+        throw new Error("Missing the required parameter 'xGameKey' when calling authPlayer");
       }
 
       let pathParams = {
@@ -64,7 +64,7 @@ export default class PlayersApi {
       let authNames = ['basicAuth'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = V1PlayersGet200Response;
+      let returnType = AuthPlayer200Response;
       return this.apiClient.callApi(
         '/v1/players', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -76,10 +76,64 @@ export default class PlayersApi {
      * Authenticate player
      * Returns an existing player object containing access token, wallet, and other details for a game when provided a valid username and password login using Basic Auth.
      * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/V1PlayersGet200Response}
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthPlayer200Response}
      */
-    v1PlayersGet(xGameKey) {
-      return this.v1PlayersGetWithHttpInfo(xGameKey)
+    authPlayer(xGameKey) {
+      return this.authPlayerWithHttpInfo(xGameKey)
+        .then(function(response_and_data) {
+          return response_and_data.data;
+        });
+    }
+
+
+    /**
+     * Create player
+     * Create a new player for a game. Players are automatically associated with an internally managed wallet.  Player access tokens can be used to directly interact with any MetaFab managed contracts, currencies, items collections, marketplaces and more. Player interactions are also gasless by default, completely removing all crypto friction for players to engage with your MetaFab supported games.
+     * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
+     * @param {module:model/CreatePlayerRequest} createPlayerRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/AuthPlayer200Response} and HTTP response
+     */
+    createPlayerWithHttpInfo(xGameKey, createPlayerRequest) {
+      let postBody = createPlayerRequest;
+      // verify the required parameter 'xGameKey' is set
+      if (xGameKey === undefined || xGameKey === null) {
+        throw new Error("Missing the required parameter 'xGameKey' when calling createPlayer");
+      }
+      // verify the required parameter 'createPlayerRequest' is set
+      if (createPlayerRequest === undefined || createPlayerRequest === null) {
+        throw new Error("Missing the required parameter 'createPlayerRequest' when calling createPlayer");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+        'X-Game-Key': xGameKey
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = AuthPlayer200Response;
+      return this.apiClient.callApi(
+        '/v1/players', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null
+      );
+    }
+
+    /**
+     * Create player
+     * Create a new player for a game. Players are automatically associated with an internally managed wallet.  Player access tokens can be used to directly interact with any MetaFab managed contracts, currencies, items collections, marketplaces and more. Player interactions are also gasless by default, completely removing all crypto friction for players to engage with your MetaFab supported games.
+     * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
+     * @param {module:model/CreatePlayerRequest} createPlayerRequest 
+     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/AuthPlayer200Response}
+     */
+    createPlayer(xGameKey, createPlayerRequest) {
+      return this.createPlayerWithHttpInfo(xGameKey, createPlayerRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });
@@ -91,22 +145,22 @@ export default class PlayersApi {
      * Update various fields specific to a player. Such as changing its password and resetting its access token.
      * @param {String} playerId Any player id within the MetaFab ecosystem.
      * @param {String} xAuthorization The `accessToken` of the authenticating player.
-     * @param {module:model/V1PlayersPlayerIdPatchRequest} v1PlayersPlayerIdPatchRequest 
+     * @param {module:model/UpdatePlayerRequest} updatePlayerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/PlayerModel} and HTTP response
      */
-    v1PlayersPlayerIdPatchWithHttpInfo(playerId, xAuthorization, v1PlayersPlayerIdPatchRequest) {
-      let postBody = v1PlayersPlayerIdPatchRequest;
+    updatePlayerWithHttpInfo(playerId, xAuthorization, updatePlayerRequest) {
+      let postBody = updatePlayerRequest;
       // verify the required parameter 'playerId' is set
       if (playerId === undefined || playerId === null) {
-        throw new Error("Missing the required parameter 'playerId' when calling v1PlayersPlayerIdPatch");
+        throw new Error("Missing the required parameter 'playerId' when calling updatePlayer");
       }
       // verify the required parameter 'xAuthorization' is set
       if (xAuthorization === undefined || xAuthorization === null) {
-        throw new Error("Missing the required parameter 'xAuthorization' when calling v1PlayersPlayerIdPatch");
+        throw new Error("Missing the required parameter 'xAuthorization' when calling updatePlayer");
       }
-      // verify the required parameter 'v1PlayersPlayerIdPatchRequest' is set
-      if (v1PlayersPlayerIdPatchRequest === undefined || v1PlayersPlayerIdPatchRequest === null) {
-        throw new Error("Missing the required parameter 'v1PlayersPlayerIdPatchRequest' when calling v1PlayersPlayerIdPatch");
+      // verify the required parameter 'updatePlayerRequest' is set
+      if (updatePlayerRequest === undefined || updatePlayerRequest === null) {
+        throw new Error("Missing the required parameter 'updatePlayerRequest' when calling updatePlayer");
       }
 
       let pathParams = {
@@ -136,65 +190,11 @@ export default class PlayersApi {
      * Update various fields specific to a player. Such as changing its password and resetting its access token.
      * @param {String} playerId Any player id within the MetaFab ecosystem.
      * @param {String} xAuthorization The `accessToken` of the authenticating player.
-     * @param {module:model/V1PlayersPlayerIdPatchRequest} v1PlayersPlayerIdPatchRequest 
+     * @param {module:model/UpdatePlayerRequest} updatePlayerRequest 
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/PlayerModel}
      */
-    v1PlayersPlayerIdPatch(playerId, xAuthorization, v1PlayersPlayerIdPatchRequest) {
-      return this.v1PlayersPlayerIdPatchWithHttpInfo(playerId, xAuthorization, v1PlayersPlayerIdPatchRequest)
-        .then(function(response_and_data) {
-          return response_and_data.data;
-        });
-    }
-
-
-    /**
-     * Create player
-     * Create a new player for a game. Players are automatically associated with an internally managed wallet.  Player access tokens can be used to directly interact with any MetaFab managed contracts, currencies, items collections, marketplaces and more. Player interactions are also gasless by default, completely removing all crypto friction for players to engage with your MetaFab supported games.
-     * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
-     * @param {module:model/V1PlayersGetRequest} v1PlayersGetRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/V1PlayersGet200Response} and HTTP response
-     */
-    v1PlayersPostWithHttpInfo(xGameKey, v1PlayersGetRequest) {
-      let postBody = v1PlayersGetRequest;
-      // verify the required parameter 'xGameKey' is set
-      if (xGameKey === undefined || xGameKey === null) {
-        throw new Error("Missing the required parameter 'xGameKey' when calling v1PlayersPost");
-      }
-      // verify the required parameter 'v1PlayersGetRequest' is set
-      if (v1PlayersGetRequest === undefined || v1PlayersGetRequest === null) {
-        throw new Error("Missing the required parameter 'v1PlayersGetRequest' when calling v1PlayersPost");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-        'X-Game-Key': xGameKey
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = ['application/json'];
-      let accepts = ['application/json'];
-      let returnType = V1PlayersGet200Response;
-      return this.apiClient.callApi(
-        '/v1/players', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null
-      );
-    }
-
-    /**
-     * Create player
-     * Create a new player for a game. Players are automatically associated with an internally managed wallet.  Player access tokens can be used to directly interact with any MetaFab managed contracts, currencies, items collections, marketplaces and more. Player interactions are also gasless by default, completely removing all crypto friction for players to engage with your MetaFab supported games.
-     * @param {String} xGameKey The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
-     * @param {module:model/V1PlayersGetRequest} v1PlayersGetRequest 
-     * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/V1PlayersGet200Response}
-     */
-    v1PlayersPost(xGameKey, v1PlayersGetRequest) {
-      return this.v1PlayersPostWithHttpInfo(xGameKey, v1PlayersGetRequest)
+    updatePlayer(playerId, xAuthorization, updatePlayerRequest) {
+      return this.updatePlayerWithHttpInfo(playerId, xAuthorization, updatePlayerRequest)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

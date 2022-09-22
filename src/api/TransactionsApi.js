@@ -41,11 +41,11 @@ export default class TransactionsApi {
      * @param {String} transactionId Any transaction id within the MetaFab ecosystem.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/TransactionModel} and HTTP response
      */
-    v1TransactionsTransactionIdGetWithHttpInfo(transactionId) {
+    getTransactionWithHttpInfo(transactionId) {
       let postBody = null;
       // verify the required parameter 'transactionId' is set
       if (transactionId === undefined || transactionId === null) {
-        throw new Error("Missing the required parameter 'transactionId' when calling v1TransactionsTransactionIdGet");
+        throw new Error("Missing the required parameter 'transactionId' when calling getTransaction");
       }
 
       let pathParams = {
@@ -75,8 +75,8 @@ export default class TransactionsApi {
      * @param {String} transactionId Any transaction id within the MetaFab ecosystem.
      * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/TransactionModel}
      */
-    v1TransactionsTransactionIdGet(transactionId) {
-      return this.v1TransactionsTransactionIdGetWithHttpInfo(transactionId)
+    getTransaction(transactionId) {
+      return this.getTransactionWithHttpInfo(transactionId)
         .then(function(response_and_data) {
           return response_and_data.data;
         });

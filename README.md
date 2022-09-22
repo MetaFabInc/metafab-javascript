@@ -103,12 +103,9 @@ var MetafabJavascript = require('metafab-javascript');
 
 
 var api = new MetafabJavascript.ContractsApi()
-var contractId = "contractId_example"; // {String} Any contract id within the MetaFab ecosystem.
-var func = "func_example"; // {String} A contract function name. This can be any valid function from the the ABI of the contract you are interacting with. For example, `balanceOf`.
-var opts = {
-  'args': 123,"Hello",false // {String} A comma seperated list of basic data type arguments. This is optional and only necessary if the function being invoked requires arguments per the contract ABI. For example, `123,\"Hello\",false`.
-};
-api.v1ContractsContractIdReadsGet(contractId, func, opts).then(function(data) {
+var xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // {String} The `secretKey` of the authenticating game.
+var createContractRequest = new MetafabJavascript.CreateContractRequest(); // {CreateContractRequest} 
+api.createContract(xAuthorization, createContractRequest).then(function(data) {
   console.log('API called successfully. Returned data: ' + data);
 }, function(error) {
   console.error(error);
@@ -123,61 +120,61 @@ All URIs are relative to *https://api.trymetafab.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*MetafabJavascript.ContractsApi* | [**v1ContractsContractIdReadsGet**](docs/ContractsApi.md#v1ContractsContractIdReadsGet) | **GET** /v1/contracts/{contractId}/reads | Read contract data
-*MetafabJavascript.ContractsApi* | [**v1ContractsContractIdWritesPost**](docs/ContractsApi.md#v1ContractsContractIdWritesPost) | **POST** /v1/contracts/{contractId}/writes | Write contract data
-*MetafabJavascript.ContractsApi* | [**v1ContractsGet**](docs/ContractsApi.md#v1ContractsGet) | **GET** /v1/contracts | Get contracts
-*MetafabJavascript.ContractsApi* | [**v1ContractsPost**](docs/ContractsApi.md#v1ContractsPost) | **POST** /v1/contracts | Create custom contract
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesCurrencyIdBalancesGet**](docs/CurrenciesApi.md#v1CurrenciesCurrencyIdBalancesGet) | **GET** /v1/currencies/{currencyId}/balances | Get currency balance
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesCurrencyIdBatchTransfersPost**](docs/CurrenciesApi.md#v1CurrenciesCurrencyIdBatchTransfersPost) | **POST** /v1/currencies/{currencyId}/batchTransfers | Batch transfer currency
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesCurrencyIdBurnsPost**](docs/CurrenciesApi.md#v1CurrenciesCurrencyIdBurnsPost) | **POST** /v1/currencies/{currencyId}/burns | Burn currency
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesCurrencyIdFeesGet**](docs/CurrenciesApi.md#v1CurrenciesCurrencyIdFeesGet) | **GET** /v1/currencies/{currencyId}/fees | Get currency fees
+*MetafabJavascript.ContractsApi* | [**createContract**](docs/ContractsApi.md#createContract) | **POST** /v1/contracts | Create custom contract
+*MetafabJavascript.ContractsApi* | [**getContracts**](docs/ContractsApi.md#getContracts) | **GET** /v1/contracts | Get contracts
+*MetafabJavascript.ContractsApi* | [**readContract**](docs/ContractsApi.md#readContract) | **GET** /v1/contracts/{contractId}/reads | Read contract data
+*MetafabJavascript.ContractsApi* | [**writeContract**](docs/ContractsApi.md#writeContract) | **POST** /v1/contracts/{contractId}/writes | Write contract data
+*MetafabJavascript.CurrenciesApi* | [**batchTransferCurrency**](docs/CurrenciesApi.md#batchTransferCurrency) | **POST** /v1/currencies/{currencyId}/batchTransfers | Batch transfer currency
+*MetafabJavascript.CurrenciesApi* | [**burnCurrency**](docs/CurrenciesApi.md#burnCurrency) | **POST** /v1/currencies/{currencyId}/burns | Burn currency
+*MetafabJavascript.CurrenciesApi* | [**createCurrency**](docs/CurrenciesApi.md#createCurrency) | **POST** /v1/currencies | Create currency
+*MetafabJavascript.CurrenciesApi* | [**getCurrencies**](docs/CurrenciesApi.md#getCurrencies) | **GET** /v1/currencies | Get currencies
+*MetafabJavascript.CurrenciesApi* | [**getCurrencyBalances**](docs/CurrenciesApi.md#getCurrencyBalances) | **GET** /v1/currencies/{currencyId}/balances | Get currency balance
+*MetafabJavascript.CurrenciesApi* | [**getCurrencyFees**](docs/CurrenciesApi.md#getCurrencyFees) | **GET** /v1/currencies/{currencyId}/fees | Get currency fees
+*MetafabJavascript.CurrenciesApi* | [**mintCurrency**](docs/CurrenciesApi.md#mintCurrency) | **POST** /v1/currencies/{currencyId}/mints | Mint currency
+*MetafabJavascript.CurrenciesApi* | [**transferCurrency**](docs/CurrenciesApi.md#transferCurrency) | **POST** /v1/currencies/{currencyId}/transfers | Transfer currency
 *MetafabJavascript.CurrenciesApi* | [**v1CurrenciesCurrencyIdFeesPost**](docs/CurrenciesApi.md#v1CurrenciesCurrencyIdFeesPost) | **POST** /v1/currencies/{currencyId}/fees | Set currency fees
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesCurrencyIdMintsPost**](docs/CurrenciesApi.md#v1CurrenciesCurrencyIdMintsPost) | **POST** /v1/currencies/{currencyId}/mints | Mint currency
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesCurrencyIdTransfersPost**](docs/CurrenciesApi.md#v1CurrenciesCurrencyIdTransfersPost) | **POST** /v1/currencies/{currencyId}/transfers | Transfer currency
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesGet**](docs/CurrenciesApi.md#v1CurrenciesGet) | **GET** /v1/currencies | Get currencies
-*MetafabJavascript.CurrenciesApi* | [**v1CurrenciesPost**](docs/CurrenciesApi.md#v1CurrenciesPost) | **POST** /v1/currencies | Create currency
-*MetafabJavascript.GamesApi* | [**v1GamesGameIdPatch**](docs/GamesApi.md#v1GamesGameIdPatch) | **PATCH** /v1/games/{gameId} | Update game
-*MetafabJavascript.GamesApi* | [**v1GamesGet**](docs/GamesApi.md#v1GamesGet) | **GET** /v1/games | Authenticate game
-*MetafabJavascript.GamesApi* | [**v1GamesPost**](docs/GamesApi.md#v1GamesPost) | **POST** /v1/games | Create game
-*MetafabJavascript.PlayersApi* | [**v1PlayersGet**](docs/PlayersApi.md#v1PlayersGet) | **GET** /v1/players | Authenticate player
-*MetafabJavascript.PlayersApi* | [**v1PlayersPlayerIdPatch**](docs/PlayersApi.md#v1PlayersPlayerIdPatch) | **PATCH** /v1/players/{playerId} | Update player
-*MetafabJavascript.PlayersApi* | [**v1PlayersPost**](docs/PlayersApi.md#v1PlayersPost) | **POST** /v1/players | Create player
-*MetafabJavascript.TransactionsApi* | [**v1TransactionsTransactionIdGet**](docs/TransactionsApi.md#v1TransactionsTransactionIdGet) | **GET** /v1/transactions/{transactionId} | Get transaction
-*MetafabJavascript.WalletsApi* | [**v1WalletsWalletIdBalancesGet**](docs/WalletsApi.md#v1WalletsWalletIdBalancesGet) | **GET** /v1/wallets/{walletId}/balances | Get wallet balances
-*MetafabJavascript.WalletsApi* | [**v1WalletsWalletIdTransactionsGet**](docs/WalletsApi.md#v1WalletsWalletIdTransactionsGet) | **GET** /v1/wallets/{walletId}/transactions | Get wallet transactions
+*MetafabJavascript.GamesApi* | [**authGame**](docs/GamesApi.md#authGame) | **GET** /v1/games | Authenticate game
+*MetafabJavascript.GamesApi* | [**createGame**](docs/GamesApi.md#createGame) | **POST** /v1/games | Create game
+*MetafabJavascript.GamesApi* | [**updateGame**](docs/GamesApi.md#updateGame) | **PATCH** /v1/games/{gameId} | Update game
+*MetafabJavascript.PlayersApi* | [**authPlayer**](docs/PlayersApi.md#authPlayer) | **GET** /v1/players | Authenticate player
+*MetafabJavascript.PlayersApi* | [**createPlayer**](docs/PlayersApi.md#createPlayer) | **POST** /v1/players | Create player
+*MetafabJavascript.PlayersApi* | [**updatePlayer**](docs/PlayersApi.md#updatePlayer) | **PATCH** /v1/players/{playerId} | Update player
+*MetafabJavascript.TransactionsApi* | [**getTransaction**](docs/TransactionsApi.md#getTransaction) | **GET** /v1/transactions/{transactionId} | Get transaction
+*MetafabJavascript.WalletsApi* | [**getWalletBalances**](docs/WalletsApi.md#getWalletBalances) | **GET** /v1/wallets/{walletId}/balances | Get wallet balances
+*MetafabJavascript.WalletsApi* | [**getWalletTransactions**](docs/WalletsApi.md#getWalletTransactions) | **GET** /v1/wallets/{walletId}/transactions | Get wallet transactions
 
 
 ## Documentation for Models
 
+ - [MetafabJavascript.AuthGame200Response](docs/AuthGame200Response.md)
+ - [MetafabJavascript.AuthGame200ResponseAllOf](docs/AuthGame200ResponseAllOf.md)
+ - [MetafabJavascript.AuthGame200ResponseAllOf1](docs/AuthGame200ResponseAllOf1.md)
+ - [MetafabJavascript.AuthPlayer200Response](docs/AuthPlayer200Response.md)
+ - [MetafabJavascript.BatchTransferCurrencyRequest](docs/BatchTransferCurrencyRequest.md)
+ - [MetafabJavascript.BurnCurrencyRequest](docs/BurnCurrencyRequest.md)
  - [MetafabJavascript.ContractModel](docs/ContractModel.md)
+ - [MetafabJavascript.CreateContractRequest](docs/CreateContractRequest.md)
+ - [MetafabJavascript.CreateCurrency200Response](docs/CreateCurrency200Response.md)
+ - [MetafabJavascript.CreateCurrency200ResponseAllOf](docs/CreateCurrency200ResponseAllOf.md)
+ - [MetafabJavascript.CreateCurrency200ResponseAllOfContract](docs/CreateCurrency200ResponseAllOfContract.md)
+ - [MetafabJavascript.CreateCurrency200ResponseAllOfContractAllOf](docs/CreateCurrency200ResponseAllOfContractAllOf.md)
+ - [MetafabJavascript.CreateCurrencyRequest](docs/CreateCurrencyRequest.md)
+ - [MetafabJavascript.CreateGameRequest](docs/CreateGameRequest.md)
+ - [MetafabJavascript.CreatePlayerRequest](docs/CreatePlayerRequest.md)
  - [MetafabJavascript.CurrencyModel](docs/CurrencyModel.md)
  - [MetafabJavascript.GameModel](docs/GameModel.md)
+ - [MetafabJavascript.GetCurrencies200ResponseInner](docs/GetCurrencies200ResponseInner.md)
+ - [MetafabJavascript.GetCurrencies200ResponseInnerAllOf](docs/GetCurrencies200ResponseInnerAllOf.md)
+ - [MetafabJavascript.GetCurrencyFees200Response](docs/GetCurrencyFees200Response.md)
+ - [MetafabJavascript.MintCurrencyRequest](docs/MintCurrencyRequest.md)
  - [MetafabJavascript.PlayerModel](docs/PlayerModel.md)
  - [MetafabJavascript.TransactionModel](docs/TransactionModel.md)
- - [MetafabJavascript.V1ContractsContractIdWritesPostRequest](docs/V1ContractsContractIdWritesPostRequest.md)
- - [MetafabJavascript.V1ContractsGetRequest](docs/V1ContractsGetRequest.md)
- - [MetafabJavascript.V1CurrenciesCurrencyIdBatchTransfersPostRequest](docs/V1CurrenciesCurrencyIdBatchTransfersPostRequest.md)
- - [MetafabJavascript.V1CurrenciesCurrencyIdBurnsPostRequest](docs/V1CurrenciesCurrencyIdBurnsPostRequest.md)
- - [MetafabJavascript.V1CurrenciesCurrencyIdFeesGet200Response](docs/V1CurrenciesCurrencyIdFeesGet200Response.md)
+ - [MetafabJavascript.TransferCurrencyRequest](docs/TransferCurrencyRequest.md)
+ - [MetafabJavascript.UpdateGameRequest](docs/UpdateGameRequest.md)
+ - [MetafabJavascript.UpdatePlayerRequest](docs/UpdatePlayerRequest.md)
  - [MetafabJavascript.V1CurrenciesCurrencyIdFeesGetRequest](docs/V1CurrenciesCurrencyIdFeesGetRequest.md)
- - [MetafabJavascript.V1CurrenciesCurrencyIdMintsPostRequest](docs/V1CurrenciesCurrencyIdMintsPostRequest.md)
- - [MetafabJavascript.V1CurrenciesCurrencyIdTransfersPostRequest](docs/V1CurrenciesCurrencyIdTransfersPostRequest.md)
- - [MetafabJavascript.V1CurrenciesGet200Response](docs/V1CurrenciesGet200Response.md)
- - [MetafabJavascript.V1CurrenciesGet200ResponseAllOf](docs/V1CurrenciesGet200ResponseAllOf.md)
- - [MetafabJavascript.V1CurrenciesGet200ResponseAllOfContract](docs/V1CurrenciesGet200ResponseAllOfContract.md)
- - [MetafabJavascript.V1CurrenciesGet200ResponseAllOfContractAllOf](docs/V1CurrenciesGet200ResponseAllOfContractAllOf.md)
- - [MetafabJavascript.V1CurrenciesGet200ResponseInner](docs/V1CurrenciesGet200ResponseInner.md)
- - [MetafabJavascript.V1CurrenciesGet200ResponseInnerAllOf](docs/V1CurrenciesGet200ResponseInnerAllOf.md)
- - [MetafabJavascript.V1CurrenciesGetRequest](docs/V1CurrenciesGetRequest.md)
- - [MetafabJavascript.V1GamesGameIdPatchRequest](docs/V1GamesGameIdPatchRequest.md)
- - [MetafabJavascript.V1GamesGet200Response](docs/V1GamesGet200Response.md)
- - [MetafabJavascript.V1GamesGet200ResponseAllOf](docs/V1GamesGet200ResponseAllOf.md)
- - [MetafabJavascript.V1GamesGet200ResponseAllOf1](docs/V1GamesGet200ResponseAllOf1.md)
- - [MetafabJavascript.V1GamesGetRequest](docs/V1GamesGetRequest.md)
- - [MetafabJavascript.V1PlayersGet200Response](docs/V1PlayersGet200Response.md)
- - [MetafabJavascript.V1PlayersGetRequest](docs/V1PlayersGetRequest.md)
- - [MetafabJavascript.V1PlayersPlayerIdPatchRequest](docs/V1PlayersPlayerIdPatchRequest.md)
  - [MetafabJavascript.WalletModel](docs/WalletModel.md)
+ - [MetafabJavascript.WriteContractRequest](docs/WriteContractRequest.md)
 
 
 ## Documentation for Authorization

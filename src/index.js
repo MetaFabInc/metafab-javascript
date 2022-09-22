@@ -13,35 +13,35 @@
 
 
 import ApiClient from './ApiClient';
+import AuthGame200Response from './model/AuthGame200Response';
+import AuthGame200ResponseAllOf from './model/AuthGame200ResponseAllOf';
+import AuthGame200ResponseAllOf1 from './model/AuthGame200ResponseAllOf1';
+import AuthPlayer200Response from './model/AuthPlayer200Response';
+import BatchTransferCurrencyRequest from './model/BatchTransferCurrencyRequest';
+import BurnCurrencyRequest from './model/BurnCurrencyRequest';
 import ContractModel from './model/ContractModel';
+import CreateContractRequest from './model/CreateContractRequest';
+import CreateCurrency200Response from './model/CreateCurrency200Response';
+import CreateCurrency200ResponseAllOf from './model/CreateCurrency200ResponseAllOf';
+import CreateCurrency200ResponseAllOfContract from './model/CreateCurrency200ResponseAllOfContract';
+import CreateCurrency200ResponseAllOfContractAllOf from './model/CreateCurrency200ResponseAllOfContractAllOf';
+import CreateCurrencyRequest from './model/CreateCurrencyRequest';
+import CreateGameRequest from './model/CreateGameRequest';
+import CreatePlayerRequest from './model/CreatePlayerRequest';
 import CurrencyModel from './model/CurrencyModel';
 import GameModel from './model/GameModel';
+import GetCurrencies200ResponseInner from './model/GetCurrencies200ResponseInner';
+import GetCurrencies200ResponseInnerAllOf from './model/GetCurrencies200ResponseInnerAllOf';
+import GetCurrencyFees200Response from './model/GetCurrencyFees200Response';
+import MintCurrencyRequest from './model/MintCurrencyRequest';
 import PlayerModel from './model/PlayerModel';
 import TransactionModel from './model/TransactionModel';
-import V1ContractsContractIdWritesPostRequest from './model/V1ContractsContractIdWritesPostRequest';
-import V1ContractsGetRequest from './model/V1ContractsGetRequest';
-import V1CurrenciesCurrencyIdBatchTransfersPostRequest from './model/V1CurrenciesCurrencyIdBatchTransfersPostRequest';
-import V1CurrenciesCurrencyIdBurnsPostRequest from './model/V1CurrenciesCurrencyIdBurnsPostRequest';
-import V1CurrenciesCurrencyIdFeesGet200Response from './model/V1CurrenciesCurrencyIdFeesGet200Response';
+import TransferCurrencyRequest from './model/TransferCurrencyRequest';
+import UpdateGameRequest from './model/UpdateGameRequest';
+import UpdatePlayerRequest from './model/UpdatePlayerRequest';
 import V1CurrenciesCurrencyIdFeesGetRequest from './model/V1CurrenciesCurrencyIdFeesGetRequest';
-import V1CurrenciesCurrencyIdMintsPostRequest from './model/V1CurrenciesCurrencyIdMintsPostRequest';
-import V1CurrenciesCurrencyIdTransfersPostRequest from './model/V1CurrenciesCurrencyIdTransfersPostRequest';
-import V1CurrenciesGet200Response from './model/V1CurrenciesGet200Response';
-import V1CurrenciesGet200ResponseAllOf from './model/V1CurrenciesGet200ResponseAllOf';
-import V1CurrenciesGet200ResponseAllOfContract from './model/V1CurrenciesGet200ResponseAllOfContract';
-import V1CurrenciesGet200ResponseAllOfContractAllOf from './model/V1CurrenciesGet200ResponseAllOfContractAllOf';
-import V1CurrenciesGet200ResponseInner from './model/V1CurrenciesGet200ResponseInner';
-import V1CurrenciesGet200ResponseInnerAllOf from './model/V1CurrenciesGet200ResponseInnerAllOf';
-import V1CurrenciesGetRequest from './model/V1CurrenciesGetRequest';
-import V1GamesGameIdPatchRequest from './model/V1GamesGameIdPatchRequest';
-import V1GamesGet200Response from './model/V1GamesGet200Response';
-import V1GamesGet200ResponseAllOf from './model/V1GamesGet200ResponseAllOf';
-import V1GamesGet200ResponseAllOf1 from './model/V1GamesGet200ResponseAllOf1';
-import V1GamesGetRequest from './model/V1GamesGetRequest';
-import V1PlayersGet200Response from './model/V1PlayersGet200Response';
-import V1PlayersGetRequest from './model/V1PlayersGetRequest';
-import V1PlayersPlayerIdPatchRequest from './model/V1PlayersPlayerIdPatchRequest';
 import WalletModel from './model/WalletModel';
+import WriteContractRequest from './model/WriteContractRequest';
 import ContractsApi from './api/ContractsApi';
 import CurrenciesApi from './api/CurrenciesApi';
 import GamesApi from './api/GamesApi';
@@ -89,10 +89,94 @@ export {
     ApiClient,
 
     /**
+     * The AuthGame200Response model constructor.
+     * @property {module:model/AuthGame200Response}
+     */
+    AuthGame200Response,
+
+    /**
+     * The AuthGame200ResponseAllOf model constructor.
+     * @property {module:model/AuthGame200ResponseAllOf}
+     */
+    AuthGame200ResponseAllOf,
+
+    /**
+     * The AuthGame200ResponseAllOf1 model constructor.
+     * @property {module:model/AuthGame200ResponseAllOf1}
+     */
+    AuthGame200ResponseAllOf1,
+
+    /**
+     * The AuthPlayer200Response model constructor.
+     * @property {module:model/AuthPlayer200Response}
+     */
+    AuthPlayer200Response,
+
+    /**
+     * The BatchTransferCurrencyRequest model constructor.
+     * @property {module:model/BatchTransferCurrencyRequest}
+     */
+    BatchTransferCurrencyRequest,
+
+    /**
+     * The BurnCurrencyRequest model constructor.
+     * @property {module:model/BurnCurrencyRequest}
+     */
+    BurnCurrencyRequest,
+
+    /**
      * The ContractModel model constructor.
      * @property {module:model/ContractModel}
      */
     ContractModel,
+
+    /**
+     * The CreateContractRequest model constructor.
+     * @property {module:model/CreateContractRequest}
+     */
+    CreateContractRequest,
+
+    /**
+     * The CreateCurrency200Response model constructor.
+     * @property {module:model/CreateCurrency200Response}
+     */
+    CreateCurrency200Response,
+
+    /**
+     * The CreateCurrency200ResponseAllOf model constructor.
+     * @property {module:model/CreateCurrency200ResponseAllOf}
+     */
+    CreateCurrency200ResponseAllOf,
+
+    /**
+     * The CreateCurrency200ResponseAllOfContract model constructor.
+     * @property {module:model/CreateCurrency200ResponseAllOfContract}
+     */
+    CreateCurrency200ResponseAllOfContract,
+
+    /**
+     * The CreateCurrency200ResponseAllOfContractAllOf model constructor.
+     * @property {module:model/CreateCurrency200ResponseAllOfContractAllOf}
+     */
+    CreateCurrency200ResponseAllOfContractAllOf,
+
+    /**
+     * The CreateCurrencyRequest model constructor.
+     * @property {module:model/CreateCurrencyRequest}
+     */
+    CreateCurrencyRequest,
+
+    /**
+     * The CreateGameRequest model constructor.
+     * @property {module:model/CreateGameRequest}
+     */
+    CreateGameRequest,
+
+    /**
+     * The CreatePlayerRequest model constructor.
+     * @property {module:model/CreatePlayerRequest}
+     */
+    CreatePlayerRequest,
 
     /**
      * The CurrencyModel model constructor.
@@ -107,6 +191,30 @@ export {
     GameModel,
 
     /**
+     * The GetCurrencies200ResponseInner model constructor.
+     * @property {module:model/GetCurrencies200ResponseInner}
+     */
+    GetCurrencies200ResponseInner,
+
+    /**
+     * The GetCurrencies200ResponseInnerAllOf model constructor.
+     * @property {module:model/GetCurrencies200ResponseInnerAllOf}
+     */
+    GetCurrencies200ResponseInnerAllOf,
+
+    /**
+     * The GetCurrencyFees200Response model constructor.
+     * @property {module:model/GetCurrencyFees200Response}
+     */
+    GetCurrencyFees200Response,
+
+    /**
+     * The MintCurrencyRequest model constructor.
+     * @property {module:model/MintCurrencyRequest}
+     */
+    MintCurrencyRequest,
+
+    /**
      * The PlayerModel model constructor.
      * @property {module:model/PlayerModel}
      */
@@ -119,34 +227,22 @@ export {
     TransactionModel,
 
     /**
-     * The V1ContractsContractIdWritesPostRequest model constructor.
-     * @property {module:model/V1ContractsContractIdWritesPostRequest}
+     * The TransferCurrencyRequest model constructor.
+     * @property {module:model/TransferCurrencyRequest}
      */
-    V1ContractsContractIdWritesPostRequest,
+    TransferCurrencyRequest,
 
     /**
-     * The V1ContractsGetRequest model constructor.
-     * @property {module:model/V1ContractsGetRequest}
+     * The UpdateGameRequest model constructor.
+     * @property {module:model/UpdateGameRequest}
      */
-    V1ContractsGetRequest,
+    UpdateGameRequest,
 
     /**
-     * The V1CurrenciesCurrencyIdBatchTransfersPostRequest model constructor.
-     * @property {module:model/V1CurrenciesCurrencyIdBatchTransfersPostRequest}
+     * The UpdatePlayerRequest model constructor.
+     * @property {module:model/UpdatePlayerRequest}
      */
-    V1CurrenciesCurrencyIdBatchTransfersPostRequest,
-
-    /**
-     * The V1CurrenciesCurrencyIdBurnsPostRequest model constructor.
-     * @property {module:model/V1CurrenciesCurrencyIdBurnsPostRequest}
-     */
-    V1CurrenciesCurrencyIdBurnsPostRequest,
-
-    /**
-     * The V1CurrenciesCurrencyIdFeesGet200Response model constructor.
-     * @property {module:model/V1CurrenciesCurrencyIdFeesGet200Response}
-     */
-    V1CurrenciesCurrencyIdFeesGet200Response,
+    UpdatePlayerRequest,
 
     /**
      * The V1CurrenciesCurrencyIdFeesGetRequest model constructor.
@@ -155,112 +251,16 @@ export {
     V1CurrenciesCurrencyIdFeesGetRequest,
 
     /**
-     * The V1CurrenciesCurrencyIdMintsPostRequest model constructor.
-     * @property {module:model/V1CurrenciesCurrencyIdMintsPostRequest}
-     */
-    V1CurrenciesCurrencyIdMintsPostRequest,
-
-    /**
-     * The V1CurrenciesCurrencyIdTransfersPostRequest model constructor.
-     * @property {module:model/V1CurrenciesCurrencyIdTransfersPostRequest}
-     */
-    V1CurrenciesCurrencyIdTransfersPostRequest,
-
-    /**
-     * The V1CurrenciesGet200Response model constructor.
-     * @property {module:model/V1CurrenciesGet200Response}
-     */
-    V1CurrenciesGet200Response,
-
-    /**
-     * The V1CurrenciesGet200ResponseAllOf model constructor.
-     * @property {module:model/V1CurrenciesGet200ResponseAllOf}
-     */
-    V1CurrenciesGet200ResponseAllOf,
-
-    /**
-     * The V1CurrenciesGet200ResponseAllOfContract model constructor.
-     * @property {module:model/V1CurrenciesGet200ResponseAllOfContract}
-     */
-    V1CurrenciesGet200ResponseAllOfContract,
-
-    /**
-     * The V1CurrenciesGet200ResponseAllOfContractAllOf model constructor.
-     * @property {module:model/V1CurrenciesGet200ResponseAllOfContractAllOf}
-     */
-    V1CurrenciesGet200ResponseAllOfContractAllOf,
-
-    /**
-     * The V1CurrenciesGet200ResponseInner model constructor.
-     * @property {module:model/V1CurrenciesGet200ResponseInner}
-     */
-    V1CurrenciesGet200ResponseInner,
-
-    /**
-     * The V1CurrenciesGet200ResponseInnerAllOf model constructor.
-     * @property {module:model/V1CurrenciesGet200ResponseInnerAllOf}
-     */
-    V1CurrenciesGet200ResponseInnerAllOf,
-
-    /**
-     * The V1CurrenciesGetRequest model constructor.
-     * @property {module:model/V1CurrenciesGetRequest}
-     */
-    V1CurrenciesGetRequest,
-
-    /**
-     * The V1GamesGameIdPatchRequest model constructor.
-     * @property {module:model/V1GamesGameIdPatchRequest}
-     */
-    V1GamesGameIdPatchRequest,
-
-    /**
-     * The V1GamesGet200Response model constructor.
-     * @property {module:model/V1GamesGet200Response}
-     */
-    V1GamesGet200Response,
-
-    /**
-     * The V1GamesGet200ResponseAllOf model constructor.
-     * @property {module:model/V1GamesGet200ResponseAllOf}
-     */
-    V1GamesGet200ResponseAllOf,
-
-    /**
-     * The V1GamesGet200ResponseAllOf1 model constructor.
-     * @property {module:model/V1GamesGet200ResponseAllOf1}
-     */
-    V1GamesGet200ResponseAllOf1,
-
-    /**
-     * The V1GamesGetRequest model constructor.
-     * @property {module:model/V1GamesGetRequest}
-     */
-    V1GamesGetRequest,
-
-    /**
-     * The V1PlayersGet200Response model constructor.
-     * @property {module:model/V1PlayersGet200Response}
-     */
-    V1PlayersGet200Response,
-
-    /**
-     * The V1PlayersGetRequest model constructor.
-     * @property {module:model/V1PlayersGetRequest}
-     */
-    V1PlayersGetRequest,
-
-    /**
-     * The V1PlayersPlayerIdPatchRequest model constructor.
-     * @property {module:model/V1PlayersPlayerIdPatchRequest}
-     */
-    V1PlayersPlayerIdPatchRequest,
-
-    /**
      * The WalletModel model constructor.
      * @property {module:model/WalletModel}
      */
     WalletModel,
+
+    /**
+     * The WriteContractRequest model constructor.
+     * @property {module:model/WriteContractRequest}
+     */
+    WriteContractRequest,
 
     /**
     * The ContractsApi service constructor.
