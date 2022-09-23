@@ -1,4 +1,4 @@
-# Metafab.UpdateGameRequest
+# MetafabJavascript.UpdateGameRequest
 
 ## Properties
 

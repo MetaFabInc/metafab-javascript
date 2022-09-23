@@ -1,4 +1,4 @@
-# Metafab.PlayersApi
+# MetafabJavascript.PlayersApi
 
 All URIs are relative to *https://api.trymetafab.com*
 
@@ -21,14 +21,14 @@ Returns an existing player object containing access token, wallet, and other det
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
-let defaultClient = Metafab.ApiClient.instance;
+import MetafabJavascript from 'metafab-javascript';
+let defaultClient = MetafabJavascript.ApiClient.instance;
 // Configure HTTP basic authorization: basicAuth
 let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new Metafab.PlayersApi();
+let apiInstance = new MetafabJavascript.PlayersApi();
 let xGameKey = game_pk_4SOqpDi8pQdnQgfCOBW29qR8YmwOhxVPz5iHoMgUEJLDdPXgwLuHqZf8ewo2GajZ; // String | The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
 apiInstance.authPlayer(xGameKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -70,11 +70,11 @@ Create a new player for a game. Players are automatically associated with an int
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.PlayersApi();
+let apiInstance = new MetafabJavascript.PlayersApi();
 let xGameKey = game_pk_4SOqpDi8pQdnQgfCOBW29qR8YmwOhxVPz5iHoMgUEJLDdPXgwLuHqZf8ewo2GajZ; // String | The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
-let createPlayerRequest = new Metafab.CreatePlayerRequest(); // CreatePlayerRequest | 
+let createPlayerRequest = new MetafabJavascript.CreatePlayerRequest(); // CreatePlayerRequest | 
 apiInstance.createPlayer(xGameKey, createPlayerRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -116,12 +116,12 @@ Update various fields specific to a player. Such as changing its password and re
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.PlayersApi();
+let apiInstance = new MetafabJavascript.PlayersApi();
 let playerId = "playerId_example"; // String | Any player id within the MetaFab ecosystem.
 let xAuthorization = player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `accessToken` of the authenticating player.
-let updatePlayerRequest = new Metafab.UpdatePlayerRequest(); // UpdatePlayerRequest | 
+let updatePlayerRequest = new MetafabJavascript.UpdatePlayerRequest(); // UpdatePlayerRequest | 
 apiInstance.updatePlayer(playerId, xAuthorization, updatePlayerRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

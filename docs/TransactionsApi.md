@@ -1,4 +1,4 @@
-# Metafab.TransactionsApi
+# MetafabJavascript.TransactionsApi
 
 All URIs are relative to *https://api.trymetafab.com*
 
@@ -19,9 +19,9 @@ Returns an executed transaction object for the provided transactionId. Transacti
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.TransactionsApi();
+let apiInstance = new MetafabJavascript.TransactionsApi();
 let transactionId = "transactionId_example"; // String | Any transaction id within the MetaFab ecosystem.
 apiInstance.getTransaction(transactionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);

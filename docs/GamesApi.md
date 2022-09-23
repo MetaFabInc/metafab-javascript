@@ -1,4 +1,4 @@
-# Metafab.GamesApi
+# MetafabJavascript.GamesApi
 
 All URIs are relative to *https://api.trymetafab.com*
 
@@ -21,14 +21,14 @@ Returns an existing game object containing authorization keys and credentials wh
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
-let defaultClient = Metafab.ApiClient.instance;
+import MetafabJavascript from 'metafab-javascript';
+let defaultClient = MetafabJavascript.ApiClient.instance;
 // Configure HTTP basic authorization: basicAuth
 let basicAuth = defaultClient.authentications['basicAuth'];
 basicAuth.username = 'YOUR USERNAME';
 basicAuth.password = 'YOUR PASSWORD';
 
-let apiInstance = new Metafab.GamesApi();
+let apiInstance = new MetafabJavascript.GamesApi();
 apiInstance.authGame().then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -66,10 +66,10 @@ Create a new game. A game is the root entity required for all API interactions. 
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.GamesApi();
-let createGameRequest = new Metafab.CreateGameRequest(); // CreateGameRequest | 
+let apiInstance = new MetafabJavascript.GamesApi();
+let createGameRequest = new MetafabJavascript.CreateGameRequest(); // CreateGameRequest | 
 apiInstance.createGame(createGameRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -110,12 +110,12 @@ Update various fields specific to a game. Such as changing its password, resetti
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.GamesApi();
+let apiInstance = new MetafabJavascript.GamesApi();
 let gameId = "gameId_example"; // String | Any game id within the MetaFab ecosystem.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let updateGameRequest = new Metafab.UpdateGameRequest(); // UpdateGameRequest | 
+let updateGameRequest = new MetafabJavascript.UpdateGameRequest(); // UpdateGameRequest | 
 apiInstance.updateGame(gameId, xAuthorization, updateGameRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

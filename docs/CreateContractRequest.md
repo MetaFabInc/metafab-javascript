@@ -1,4 +1,4 @@
-# Metafab.CreateContractRequest
+# MetafabJavascript.CreateContractRequest
 
 ## Properties
 

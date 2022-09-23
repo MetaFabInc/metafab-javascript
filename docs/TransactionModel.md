@@ -1,4 +1,4 @@
-# Metafab.TransactionModel
+# MetafabJavascript.TransactionModel
 
 ## Properties
 

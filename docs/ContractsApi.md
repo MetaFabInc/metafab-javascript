@@ -1,4 +1,4 @@
-# Metafab.ContractsApi
+# MetafabJavascript.ContractsApi
 
 All URIs are relative to *https://api.trymetafab.com*
 
@@ -22,11 +22,11 @@ Create a MetaFab custom contract entry from an existing contract address and con
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.ContractsApi();
+let apiInstance = new MetafabJavascript.ContractsApi();
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let createContractRequest = new Metafab.CreateContractRequest(); // CreateContractRequest | 
+let createContractRequest = new MetafabJavascript.CreateContractRequest(); // CreateContractRequest | 
 apiInstance.createContract(xAuthorization, createContractRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -68,9 +68,9 @@ Returns an array of active contracts deployed by the game associated with the pr
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.ContractsApi();
+let apiInstance = new MetafabJavascript.ContractsApi();
 let xGameKey = game_pk_4SOqpDi8pQdnQgfCOBW29qR8YmwOhxVPz5iHoMgUEJLDdPXgwLuHqZf8ewo2GajZ; // String | The `publishedKey` of a specific game. This can be shared or included in game clients, websites, etc.
 apiInstance.getContracts(xGameKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -112,9 +112,9 @@ Oftentimes you&#39;ll want to query and retrieve some data from a contract. This
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.ContractsApi();
+let apiInstance = new MetafabJavascript.ContractsApi();
 let contractId = "contractId_example"; // String | Any contract id within the MetaFab ecosystem.
 let func = "func_example"; // String | A contract function name. This can be any valid function from the the ABI of the contract you are interacting with. For example, `balanceOf`.
 let opts = {
@@ -162,13 +162,13 @@ MetaFab&#39;s convenience endpoints for contract interactions may not be flexibl
 ### Example
 
 ```javascript
-import Metafab from 'metafab';
+import MetafabJavascript from 'metafab-javascript';
 
-let apiInstance = new Metafab.ContractsApi();
+let apiInstance = new MetafabJavascript.ContractsApi();
 let contractId = "contractId_example"; // String | Any contract id within the MetaFab ecosystem.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
 let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
-let writeContractRequest = new Metafab.WriteContractRequest(); // WriteContractRequest | 
+let writeContractRequest = new MetafabJavascript.WriteContractRequest(); // WriteContractRequest | 
 apiInstance.writeContract(contractId, xAuthorization, xPassword, writeContractRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {

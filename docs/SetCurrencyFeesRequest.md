@@ -1,4 +1,4 @@
-# Metafab.SetCurrencyFeesRequest
+# MetafabJavascript.SetCurrencyFeesRequest
 
 ## Properties
 

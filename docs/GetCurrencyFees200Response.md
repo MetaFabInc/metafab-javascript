@@ -1,4 +1,4 @@
-# Metafab.GetCurrencyFees200Response
+# MetafabJavascript.GetCurrencyFees200Response
 
 ## Properties
 

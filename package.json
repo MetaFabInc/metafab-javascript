@@ -1,7 +1,7 @@
 {
-  "name": "metafab",
+  "name": "metafab-javascript",
   "version": "1.0.1",
-  "description": " Complete MetaFab API references and guides can be found at: https://trymetafab.com",
+  "description": "Official JavaScript client for MetaFab.",
   "license": "MIT",
   "main": "dist/index.js",
   "scripts": {
