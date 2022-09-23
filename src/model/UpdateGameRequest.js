@@ -47,6 +47,12 @@ class UpdateGameRequest {
         if (data) {
             obj = obj || new UpdateGameRequest();
 
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            }
+            if (data.hasOwnProperty('email')) {
+                obj['email'] = ApiClient.convertToType(data['email'], 'String');
+            }
             if (data.hasOwnProperty('currentPassword')) {
                 obj['currentPassword'] = ApiClient.convertToType(data['currentPassword'], 'String');
             }
@@ -70,7 +76,19 @@ class UpdateGameRequest {
 }
 
 /**
- * The game's current password. Must be provided if setting `newPassword`.
+ * A new name. Replaces the game's current name.
+ * @member {String} name
+ */
+UpdateGameRequest.prototype['name'] = undefined;
+
+/**
+ * A new email address. The game's old email will no longer be valid for account authentication. `currentPassword` must also be provided.
+ * @member {String} email
+ */
+UpdateGameRequest.prototype['email'] = undefined;
+
+/**
+ * The game's current password. Must be provided if setting `newPassword` or `email`.
  * @member {String} currentPassword
  */
 UpdateGameRequest.prototype['currentPassword'] = undefined;
