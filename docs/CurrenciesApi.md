@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**burnCurrency**](CurrenciesApi.md#burnCurrency) | **POST** /v1/currencies/{currencyId}/burns | Burn currency
 [**createCurrency**](CurrenciesApi.md#createCurrency) | **POST** /v1/currencies | Create currency
 [**getCurrencies**](CurrenciesApi.md#getCurrencies) | **GET** /v1/currencies | Get currencies
-[**getCurrencyBalances**](CurrenciesApi.md#getCurrencyBalances) | **GET** /v1/currencies/{currencyId}/balances | Get currency balance
+[**getCurrencyBalance**](CurrenciesApi.md#getCurrencyBalance) | **GET** /v1/currencies/{currencyId}/balances | Get currency balance
 [**getCurrencyFees**](CurrenciesApi.md#getCurrencyFees) | **GET** /v1/currencies/{currencyId}/fees | Get currency fees
 [**mintCurrency**](CurrenciesApi.md#mintCurrency) | **POST** /v1/currencies/{currencyId}/mints | Mint currency
 [**setCurrencyFees**](CurrenciesApi.md#setCurrencyFees) | **POST** /v1/currencies/{currencyId}/fees | Set currency fees
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 Batch transfer currency
 
-Transfers multiple amounts of currency to multiple provided wallet addresses or wallet addresses associated with the provided walletIds. You may also provide a combination of addresses and walletIds in one request, the proper receipients will be automatically determined, with &#x60;addresses&#x60; getting &#x60;amounts&#x60; order priority first. Optional references may be included for the transfer. References are useful for identifying transfers intended to pay for items, trades, services and more.
+Transfers multiple amounts of currency to multiple provided wallet addresses or wallet addresses associated with the provided walletIds. You may also provide a combination of addresses and walletIds in one request, the proper receipients will be automatically determined, with &#x60;addresses&#x60; getting &#x60;amounts&#x60; order priority first.  Optional references may be included for the transfer. References are useful for identifying transfers intended to pay for items, trades, services and more.
 
 ### Example
 
@@ -208,9 +208,9 @@ No authorization required
 - **Accept**: application/json
 
 
-## getCurrencyBalances
+## getCurrencyBalance
 
-> Number getCurrencyBalances(currencyId, opts)
+> Number getCurrencyBalance(currencyId, opts)
 
 Get currency balance
 
@@ -227,7 +227,7 @@ let opts = {
   'address': 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D, // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
   'walletId': "walletId_example" // String | Any wallet id within the MetaFab ecosystem.
 };
-apiInstance.getCurrencyBalances(currencyId, opts).then((data) => {
+apiInstance.getCurrencyBalance(currencyId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -308,7 +308,7 @@ No authorization required
 
 Mint currency
 
-Creates (mints) the provided amount of currency  to the provided wallet address or wallet address associated with the provided walletId.
+Creates (mints) the provided amount of currency to the provided wallet address or wallet address associated with the provided walletId.
 
 ### Example
 
