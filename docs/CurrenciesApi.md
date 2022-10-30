@@ -10,7 +10,10 @@ Method | HTTP request | Description
 [**getCurrencies**](CurrenciesApi.md#getCurrencies) | **GET** /v1/currencies | Get currencies
 [**getCurrencyBalance**](CurrenciesApi.md#getCurrencyBalance) | **GET** /v1/currencies/{currencyId}/balances | Get currency balance
 [**getCurrencyFees**](CurrenciesApi.md#getCurrencyFees) | **GET** /v1/currencies/{currencyId}/fees | Get currency fees
+[**getCurrencyRole**](CurrenciesApi.md#getCurrencyRole) | **GET** /v1/currencies/{currencyId}/roles | Get currency role
+[**grantCurrencyRole**](CurrenciesApi.md#grantCurrencyRole) | **POST** /v1/currencies/{currencyId}/roles | Grant currency role
 [**mintCurrency**](CurrenciesApi.md#mintCurrency) | **POST** /v1/currencies/{currencyId}/mints | Mint currency
+[**revokeCurrencyRole**](CurrenciesApi.md#revokeCurrencyRole) | **DELETE** /v1/currencies/{currencyId}/roles | Revoke currency role
 [**setCurrencyFees**](CurrenciesApi.md#setCurrencyFees) | **POST** /v1/currencies/{currencyId}/fees | Set currency fees
 [**transferCurrency**](CurrenciesApi.md#transferCurrency) | **POST** /v1/currencies/{currencyId}/transfers | Transfer currency
 
@@ -302,6 +305,108 @@ No authorization required
 - **Accept**: application/json
 
 
+## getCurrencyRole
+
+> Boolean getCurrencyRole(currencyId, role, opts)
+
+Get currency role
+
+Returns a boolean (true/false) representing if the provided role for this currency has been granted to the provided address or address associated with the provided walletId.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.CurrenciesApi();
+let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
+let role = minter; // String | A valid MetaFab role or bytes string representing a role, such as `0xc9eb32e43bf5ecbceacf00b32281dfc5d6d700a0db676ea26ccf938a385ac3b7`
+let opts = {
+  'address': 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D, // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
+  'walletId': "walletId_example" // String | Any wallet id within the MetaFab ecosystem.
+};
+apiInstance.getCurrencyRole(currencyId, role, opts).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyId** | **String**| Any currency id within the MetaFab ecosystem. | 
+ **role** | **String**| A valid MetaFab role or bytes string representing a role, such as &#x60;0xc9eb32e43bf5ecbceacf00b32281dfc5d6d700a0db676ea26ccf938a385ac3b7&#x60; | 
+ **address** | **String**| A valid EVM based address. For example, &#x60;0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D&#x60;. | [optional] 
+ **walletId** | **String**| Any wallet id within the MetaFab ecosystem. | [optional] 
+
+### Return type
+
+**Boolean**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## grantCurrencyRole
+
+> TransactionModel grantCurrencyRole(currencyId, xAuthorization, xPassword, grantCurrencyRoleRequest)
+
+Grant currency role
+
+Grants the provided role for the currency to the provided address or address associated with the provided walletId. Granted roles give different types of authority on behalf of the currency for specific players, addresses, or contracts to perform different types of permissioned currency operations.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.CurrenciesApi();
+let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
+let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
+let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let grantCurrencyRoleRequest = new MetafabJavascript.GrantCurrencyRoleRequest(); // GrantCurrencyRoleRequest | 
+apiInstance.grantCurrencyRole(currencyId, xAuthorization, xPassword, grantCurrencyRoleRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyId** | **String**| Any currency id within the MetaFab ecosystem. | 
+ **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
+ **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **grantCurrencyRoleRequest** | [**GrantCurrencyRoleRequest**](GrantCurrencyRoleRequest.md)|  | 
+
+### Return type
+
+[**TransactionModel**](TransactionModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## mintCurrency
 
 > TransactionModel mintCurrency(currencyId, xAuthorization, xPassword, mintCurrencyRequest)
@@ -337,6 +442,56 @@ Name | Type | Description  | Notes
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
  **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **mintCurrencyRequest** | [**MintCurrencyRequest**](MintCurrencyRequest.md)|  | 
+
+### Return type
+
+[**TransactionModel**](TransactionModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## revokeCurrencyRole
+
+> TransactionModel revokeCurrencyRole(currencyId, xAuthorization, xPassword, revokeCollectionRoleRequest)
+
+Revoke currency role
+
+Revokes the provided role for the currency to the provided address or address associated with the provided walletId.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.CurrenciesApi();
+let currencyId = "currencyId_example"; // String | Any currency id within the MetaFab ecosystem.
+let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
+let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let revokeCollectionRoleRequest = new MetafabJavascript.RevokeCollectionRoleRequest(); // RevokeCollectionRoleRequest | 
+apiInstance.revokeCurrencyRole(currencyId, xAuthorization, xPassword, revokeCollectionRoleRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **currencyId** | **String**| Any currency id within the MetaFab ecosystem. | 
+ **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
+ **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **revokeCollectionRoleRequest** | [**RevokeCollectionRoleRequest**](RevokeCollectionRoleRequest.md)|  | 
 
 ### Return type
 
