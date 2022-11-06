@@ -332,7 +332,7 @@ No authorization required
 
 ## getCollectionItem
 
-> [Object] getCollectionItem(collectionId, collectionItemId)
+> Object getCollectionItem(collectionId, collectionItemId)
 
 Get collection item
 
@@ -364,7 +364,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**[Object]**
+**Object**
 
 ### Authorization
 

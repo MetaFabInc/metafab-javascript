@@ -19,6 +19,10 @@ Name | Type | Description | Notes
 
 * `MUMBAI` (value: `"MUMBAI"`)
 
+* `ARBITRUM` (value: `"ARBITRUM"`)
+
+* `ARBITRUMGOERLI` (value: `"ARBITRUMGOERLI"`)
+
 
 
 
