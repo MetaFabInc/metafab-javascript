@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The ExchangeModel model module.
- * @module model/ExchangeModel
+ * The PublicGame model module.
+ * @module model/PublicGame
  * @version 1.2.0
  */
-class ExchangeModel {
+class PublicGame {
     /**
-     * Constructs a new <code>ExchangeModel</code>.
-     * @alias module:model/ExchangeModel
+     * Constructs a new <code>PublicGame</code>.
+     * @alias module:model/PublicGame
      */
     constructor() { 
         
-        ExchangeModel.initialize(this);
+        PublicGame.initialize(this);
     }
 
     /**
@@ -37,24 +37,24 @@ class ExchangeModel {
     }
 
     /**
-     * Constructs a <code>ExchangeModel</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PublicGame</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/ExchangeModel} obj Optional instance to populate.
-     * @return {module:model/ExchangeModel} The populated <code>ExchangeModel</code> instance.
+     * @param {module:model/PublicGame} obj Optional instance to populate.
+     * @return {module:model/PublicGame} The populated <code>PublicGame</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new ExchangeModel();
+            obj = obj || new PublicGame();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('gameId')) {
-                obj['gameId'] = ApiClient.convertToType(data['gameId'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
-            if (data.hasOwnProperty('contractId')) {
-                obj['contractId'] = ApiClient.convertToType(data['contractId'], 'String');
+            if (data.hasOwnProperty('publishedKey')) {
+                obj['publishedKey'] = ApiClient.convertToType(data['publishedKey'], 'String');
             }
             if (data.hasOwnProperty('updatedAt')) {
                 obj['updatedAt'] = ApiClient.convertToType(data['updatedAt'], 'String');
@@ -73,36 +73,36 @@ class ExchangeModel {
  * This field has not had a description added.
  * @member {String} id
  */
-ExchangeModel.prototype['id'] = undefined;
+PublicGame.prototype['id'] = undefined;
 
 /**
  * This field has not had a description added.
- * @member {String} gameId
+ * @member {String} name
  */
-ExchangeModel.prototype['gameId'] = undefined;
+PublicGame.prototype['name'] = undefined;
 
 /**
  * This field has not had a description added.
- * @member {String} contractId
+ * @member {String} publishedKey
  */
-ExchangeModel.prototype['contractId'] = undefined;
+PublicGame.prototype['publishedKey'] = undefined;
 
 /**
  * This field has not had a description added.
  * @member {String} updatedAt
  */
-ExchangeModel.prototype['updatedAt'] = undefined;
+PublicGame.prototype['updatedAt'] = undefined;
 
 /**
  * This field has not had a description added.
  * @member {String} createdAt
  */
-ExchangeModel.prototype['createdAt'] = undefined;
+PublicGame.prototype['createdAt'] = undefined;
 
 
 
 
 
 
-export default ExchangeModel;
+export default PublicGame;
 

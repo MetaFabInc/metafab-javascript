@@ -48,6 +48,9 @@ docs/MintCollectionItemRequest.md
 docs/MintCurrencyRequest.md
 docs/PlayerModel.md
 docs/PlayersApi.md
+docs/PublicGame.md
+docs/PublicPlayer.md
+docs/PublicPlayerWallet.md
 docs/RevokeCollectionRoleRequest.md
 docs/SetCollectionApprovalRequest.md
 docs/SetCollectionItemTimelockRequest.md
@@ -116,6 +119,9 @@ src/model/GrantCurrencyRoleRequest.js
 src/model/MintCollectionItemRequest.js
 src/model/MintCurrencyRequest.js
 src/model/PlayerModel.js
+src/model/PublicGame.js
+src/model/PublicPlayer.js
+src/model/PublicPlayerWallet.js
 src/model/RevokeCollectionRoleRequest.js
 src/model/SetCollectionApprovalRequest.js
 src/model/SetCollectionItemTimelockRequest.js

@@ -12,20 +12,21 @@
  */
 
 import ApiClient from '../ApiClient';
+import PublicPlayerWallet from './PublicPlayerWallet';
 
 /**
- * The TransactionModel model module.
- * @module model/TransactionModel
+ * The PublicPlayer model module.
+ * @module model/PublicPlayer
  * @version 1.2.0
  */
-class TransactionModel {
+class PublicPlayer {
     /**
-     * Constructs a new <code>TransactionModel</code>.
-     * @alias module:model/TransactionModel
+     * Constructs a new <code>PublicPlayer</code>.
+     * @alias module:model/PublicPlayer
      */
     constructor() { 
         
-        TransactionModel.initialize(this);
+        PublicPlayer.initialize(this);
     }
 
     /**
@@ -37,39 +38,36 @@ class TransactionModel {
     }
 
     /**
-     * Constructs a <code>TransactionModel</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PublicPlayer</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/TransactionModel} obj Optional instance to populate.
-     * @return {module:model/TransactionModel} The populated <code>TransactionModel</code> instance.
+     * @param {module:model/PublicPlayer} obj Optional instance to populate.
+     * @return {module:model/PublicPlayer} The populated <code>PublicPlayer</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new TransactionModel();
+            obj = obj || new PublicPlayer();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
             }
-            if (data.hasOwnProperty('contractId')) {
-                obj['contractId'] = ApiClient.convertToType(data['contractId'], 'String');
+            if (data.hasOwnProperty('gameId')) {
+                obj['gameId'] = ApiClient.convertToType(data['gameId'], 'String');
             }
             if (data.hasOwnProperty('walletId')) {
                 obj['walletId'] = ApiClient.convertToType(data['walletId'], 'String');
             }
-            if (data.hasOwnProperty('function')) {
-                obj['function'] = ApiClient.convertToType(data['function'], 'String');
-            }
-            if (data.hasOwnProperty('args')) {
-                obj['args'] = ApiClient.convertToType(data['args'], Object);
-            }
-            if (data.hasOwnProperty('hash')) {
-                obj['hash'] = ApiClient.convertToType(data['hash'], 'String');
+            if (data.hasOwnProperty('username')) {
+                obj['username'] = ApiClient.convertToType(data['username'], 'String');
             }
             if (data.hasOwnProperty('updatedAt')) {
                 obj['updatedAt'] = ApiClient.convertToType(data['updatedAt'], 'String');
             }
             if (data.hasOwnProperty('createdAt')) {
                 obj['createdAt'] = ApiClient.convertToType(data['createdAt'], 'String');
+            }
+            if (data.hasOwnProperty('wallet')) {
+                obj['wallet'] = PublicPlayerWallet.constructFromObject(data['wallet']);
             }
         }
         return obj;
@@ -82,54 +80,47 @@ class TransactionModel {
  * This field has not had a description added.
  * @member {String} id
  */
-TransactionModel.prototype['id'] = undefined;
+PublicPlayer.prototype['id'] = undefined;
 
 /**
  * This field has not had a description added.
- * @member {String} contractId
+ * @member {String} gameId
  */
-TransactionModel.prototype['contractId'] = undefined;
+PublicPlayer.prototype['gameId'] = undefined;
 
 /**
  * This field has not had a description added.
  * @member {String} walletId
  */
-TransactionModel.prototype['walletId'] = undefined;
+PublicPlayer.prototype['walletId'] = undefined;
 
 /**
  * This field has not had a description added.
- * @member {String} function
+ * @member {String} username
  */
-TransactionModel.prototype['function'] = undefined;
-
-/**
- * This field has not had a description added.
- * @member {Object} args
- */
-TransactionModel.prototype['args'] = undefined;
-
-/**
- * This field has not had a description added.
- * @member {String} hash
- */
-TransactionModel.prototype['hash'] = undefined;
+PublicPlayer.prototype['username'] = undefined;
 
 /**
  * This field has not had a description added.
  * @member {String} updatedAt
  */
-TransactionModel.prototype['updatedAt'] = undefined;
+PublicPlayer.prototype['updatedAt'] = undefined;
 
 /**
  * This field has not had a description added.
  * @member {String} createdAt
  */
-TransactionModel.prototype['createdAt'] = undefined;
+PublicPlayer.prototype['createdAt'] = undefined;
+
+/**
+ * @member {module:model/PublicPlayerWallet} wallet
+ */
+PublicPlayer.prototype['wallet'] = undefined;
 
 
 
 
 
 
-export default TransactionModel;
+export default PublicPlayer;
 

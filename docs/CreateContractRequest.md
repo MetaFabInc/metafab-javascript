@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 * `MATIC` (value: `"MATIC"`)
 
-* `MUMBAI` (value: `"MUMBAI"`)
+* `MATICMUMBAI` (value: `"MATICMUMBAI"`)
 
 * `ARBITRUM` (value: `"ARBITRUM"`)
 

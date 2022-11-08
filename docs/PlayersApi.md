@@ -4,8 +4,10 @@ All URIs are relative to *https://api.trymetafab.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authPlayer**](PlayersApi.md#authPlayer) | **GET** /v1/players | Authenticate player
+[**authPlayer**](PlayersApi.md#authPlayer) | **GET** /v1/players/auth | Authenticate player
 [**createPlayer**](PlayersApi.md#createPlayer) | **POST** /v1/players | Create player
+[**getPlayer**](PlayersApi.md#getPlayer) | **GET** /v1/players/{playerId} | Get player
+[**getPlayers**](PlayersApi.md#getPlayers) | **GET** /v1/players | Get players
 [**updatePlayer**](PlayersApi.md#updatePlayer) | **PATCH** /v1/players/{playerId} | Update player
 
 
@@ -102,6 +104,94 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getPlayer
+
+> PublicPlayer getPlayer(playerId)
+
+Get player
+
+Returns a player object for the provided player id.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.PlayersApi();
+let playerId = "playerId_example"; // String | Any player id within the MetaFab ecosystem.
+apiInstance.getPlayer(playerId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **playerId** | **String**| Any player id within the MetaFab ecosystem. | 
+
+### Return type
+
+[**PublicPlayer**](PublicPlayer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getPlayers
+
+> [PublicPlayer] getPlayers(xAuthorization)
+
+Get players
+
+Returns all players for the authenticated game as an array of player objects.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.PlayersApi();
+let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
+apiInstance.getPlayers(xAuthorization).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
+
+### Return type
+
+[**[PublicPlayer]**](PublicPlayer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 

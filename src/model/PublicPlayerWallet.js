@@ -14,18 +14,18 @@
 import ApiClient from '../ApiClient';
 
 /**
- * The WalletModel model module.
- * @module model/WalletModel
+ * The PublicPlayerWallet model module.
+ * @module model/PublicPlayerWallet
  * @version 1.2.0
  */
-class WalletModel {
+class PublicPlayerWallet {
     /**
-     * Constructs a new <code>WalletModel</code>.
-     * @alias module:model/WalletModel
+     * Constructs a new <code>PublicPlayerWallet</code>.
+     * @alias module:model/PublicPlayerWallet
      */
     constructor() { 
         
-        WalletModel.initialize(this);
+        PublicPlayerWallet.initialize(this);
     }
 
     /**
@@ -37,15 +37,15 @@ class WalletModel {
     }
 
     /**
-     * Constructs a <code>WalletModel</code> from a plain JavaScript object, optionally creating a new instance.
+     * Constructs a <code>PublicPlayerWallet</code> from a plain JavaScript object, optionally creating a new instance.
      * Copies all relevant properties from <code>data</code> to <code>obj</code> if supplied or a new instance if not.
      * @param {Object} data The plain JavaScript object bearing properties of interest.
-     * @param {module:model/WalletModel} obj Optional instance to populate.
-     * @return {module:model/WalletModel} The populated <code>WalletModel</code> instance.
+     * @param {module:model/PublicPlayerWallet} obj Optional instance to populate.
+     * @return {module:model/PublicPlayerWallet} The populated <code>PublicPlayerWallet</code> instance.
      */
     static constructFromObject(data, obj) {
         if (data) {
-            obj = obj || new WalletModel();
+            obj = obj || new PublicPlayerWallet();
 
             if (data.hasOwnProperty('id')) {
                 obj['id'] = ApiClient.convertToType(data['id'], 'String');
@@ -64,18 +64,18 @@ class WalletModel {
  * This field has not had a description added.
  * @member {String} id
  */
-WalletModel.prototype['id'] = undefined;
+PublicPlayerWallet.prototype['id'] = undefined;
 
 /**
  * This field has not had a description added.
  * @member {String} address
  */
-WalletModel.prototype['address'] = undefined;
+PublicPlayerWallet.prototype['address'] = undefined;
 
 
 
 
 
 
-export default WalletModel;
+export default PublicPlayerWallet;
 

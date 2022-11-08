@@ -4,8 +4,9 @@ All URIs are relative to *https://api.trymetafab.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**authGame**](GamesApi.md#authGame) | **GET** /v1/games | Authenticate game
+[**authGame**](GamesApi.md#authGame) | **GET** /v1/games/auth | Authenticate game
 [**createGame**](GamesApi.md#createGame) | **POST** /v1/games | Create game
+[**getGame**](GamesApi.md#getGame) | **GET** /v1/games/{gameId} | Get game
 [**updateGame**](GamesApi.md#updateGame) | **PATCH** /v1/games/{gameId} | Update game
 
 
@@ -96,6 +97,50 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## getGame
+
+> PublicGame getGame(gameId)
+
+Get game
+
+Returns a game object for the provided game id.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.GamesApi();
+let gameId = "gameId_example"; // String | Any game id within the MetaFab ecosystem.
+apiInstance.getGame(gameId).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gameId** | **String**| Any game id within the MetaFab ecosystem. | 
+
+### Return type
+
+[**PublicGame**](PublicGame.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 
