@@ -41,6 +41,7 @@ docs/GetCurrencies200ResponseInner.md
 docs/GetCurrencies200ResponseInnerAllOf.md
 docs/GetCurrencyFees200Response.md
 docs/GetExchanges200ResponseInner.md
+docs/GetPlayerData200Response.md
 docs/GrantCollectionRoleRequest.md
 docs/GrantCurrencyRoleRequest.md
 docs/ItemsApi.md
@@ -56,6 +57,7 @@ docs/SetCollectionApprovalRequest.md
 docs/SetCollectionItemTimelockRequest.md
 docs/SetCurrencyFeesRequest.md
 docs/SetExchangeOfferRequest.md
+docs/SetPlayerDataRequest.md
 docs/TransactionModel.md
 docs/TransactionsApi.md
 docs/TransferCollectionItemRequest.md
@@ -114,6 +116,7 @@ src/model/GetCurrencies200ResponseInner.js
 src/model/GetCurrencies200ResponseInnerAllOf.js
 src/model/GetCurrencyFees200Response.js
 src/model/GetExchanges200ResponseInner.js
+src/model/GetPlayerData200Response.js
 src/model/GrantCollectionRoleRequest.js
 src/model/GrantCurrencyRoleRequest.js
 src/model/MintCollectionItemRequest.js
@@ -127,6 +130,7 @@ src/model/SetCollectionApprovalRequest.js
 src/model/SetCollectionItemTimelockRequest.js
 src/model/SetCurrencyFeesRequest.js
 src/model/SetExchangeOfferRequest.js
+src/model/SetPlayerDataRequest.js
 src/model/TransactionModel.js
 src/model/TransferCollectionItemRequest.js
 src/model/TransferCurrencyRequest.js
