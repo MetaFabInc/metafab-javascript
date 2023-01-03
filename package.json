@@ -1,6 +1,6 @@
 {
   "name": "metafab-javascript",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Official JavaScript client for MetaFab.",
   "license": "MIT",
   "main": "dist/index.js",

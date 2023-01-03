@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **abi** | **Object** | This field has not had a description added. | [optional] 
 **type** | **String** | This field has not had a description added. | [optional] 
 **address** | **String** | This field has not had a description added. | [optional] 
+**forwarderAddress** | **String** | This field has not had a description added. | [optional] 
 **updatedAt** | **String** | This field has not had a description added. | [optional] 
 **createdAt** | **String** | This field has not had a description added. | [optional] 
 **transactions** | [**[TransactionModel]**](TransactionModel.md) |  | [optional] 

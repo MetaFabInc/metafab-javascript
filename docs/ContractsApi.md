@@ -7,6 +7,8 @@ Method | HTTP request | Description
 [**createContract**](ContractsApi.md#createContract) | **POST** /v1/contracts | Create custom contract
 [**getContracts**](ContractsApi.md#getContracts) | **GET** /v1/contracts | Get contracts
 [**readContract**](ContractsApi.md#readContract) | **GET** /v1/contracts/{contractId}/reads | Read contract data
+[**transferContractOwnership**](ContractsApi.md#transferContractOwnership) | **POST** /v1/contracts/{contractId}/owners | Transfer contract ownership
+[**upgradeContractTrustedForwarder**](ContractsApi.md#upgradeContractTrustedForwarder) | **POST** /v1/contracts/{contractId}/forwarders | Upgrade contract trusted forwarder
 [**writeContract**](ContractsApi.md#writeContract) | **POST** /v1/contracts/{contractId}/writes | Write contract data
 
 
@@ -148,6 +150,106 @@ No authorization required
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## transferContractOwnership
+
+> TransactionModel transferContractOwnership(contractId, xAuthorization, xPassword, transferContractOwnershipRequest)
+
+Transfer contract ownership
+
+Transfer ownership and control of a MetaFab deployed smart contract to another wallet you control. Transferring control does not disrupt your usage of MetaFab APIs and can be done so without causing any service outages for your game. The new owner wallet will have full control over any relevant item collections and marketplace related pages this contract may be associated with, such as for MetaFab item or NFT contracts.  Your game&#39;s custodial wallet will retain a &#x60;MANAGER_ROLE&#x60; on your contracts, allowing you to still use MetaFab APIs without issue while you retain full contract ownership and the contract&#39;s administrator role. If ever you want eject from using the MetaFab APIs but still retain your deployed smart contracts, you can revoke the &#x60;MANAGER_ROLE&#x60; from your game&#39;s custodial wallet address for your contract. We do not lock you into our systems.  Please be certain that the wallet address you transfer ownership to is one you control. Once ownership and admin permissions are transferred, your game&#39;s custodial wallet no longer has permission to reassign ownership or administrative priveleges for your contract.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.ContractsApi();
+let contractId = "contractId_example"; // String | Any contract id within the MetaFab ecosystem.
+let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
+let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let transferContractOwnershipRequest = new MetafabJavascript.TransferContractOwnershipRequest(); // TransferContractOwnershipRequest | 
+apiInstance.transferContractOwnership(contractId, xAuthorization, xPassword, transferContractOwnershipRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contractId** | **String**| Any contract id within the MetaFab ecosystem. | 
+ **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
+ **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **transferContractOwnershipRequest** | [**TransferContractOwnershipRequest**](TransferContractOwnershipRequest.md)|  | 
+
+### Return type
+
+[**TransactionModel**](TransactionModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## upgradeContractTrustedForwarder
+
+> TransactionModel upgradeContractTrustedForwarder(contractId, xAuthorization, xPassword, upgradeContractTrustedForwarderRequest)
+
+Upgrade contract trusted forwarder
+
+In rare circumstances, you may need to upgrade the underlying trusted forwarder contract address attached to your game&#39;s contracts. Using this endpoint, you can provide a new trusted forwarder contract address to assign to any of your contracts that implement the &#x60;upgradeTrustedForwarder&#x60; function.
+
+### Example
+
+```javascript
+import MetafabJavascript from 'metafab-javascript';
+
+let apiInstance = new MetafabJavascript.ContractsApi();
+let contractId = "contractId_example"; // String | Any contract id within the MetaFab ecosystem.
+let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
+let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let upgradeContractTrustedForwarderRequest = new MetafabJavascript.UpgradeContractTrustedForwarderRequest(); // UpgradeContractTrustedForwarderRequest | 
+apiInstance.upgradeContractTrustedForwarder(contractId, xAuthorization, xPassword, upgradeContractTrustedForwarderRequest).then((data) => {
+  console.log('API called successfully. Returned data: ' + data);
+}, (error) => {
+  console.error(error);
+});
+
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **contractId** | **String**| Any contract id within the MetaFab ecosystem. | 
+ **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
+ **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **upgradeContractTrustedForwarderRequest** | [**UpgradeContractTrustedForwarderRequest**](UpgradeContractTrustedForwarderRequest.md)|  | 
+
+### Return type
+
+[**TransactionModel**](TransactionModel.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 
