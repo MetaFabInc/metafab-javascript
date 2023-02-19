@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## createLootboxManager
 
-> CreateLootboxManager200Response createLootboxManager(xAuthorization, xPassword, createLootboxManagerRequest)
+> CreateLootboxManager200Response createLootboxManager(xAuthorization, xWalletDecryptKey, createLootboxManagerRequest)
 
 Create lootbox manager
 
@@ -29,9 +29,9 @@ import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.LootboxesApi();
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let createLootboxManagerRequest = new MetafabJavascript.CreateLootboxManagerRequest(); // CreateLootboxManagerRequest | 
-apiInstance.createLootboxManager(xAuthorization, xPassword, createLootboxManagerRequest).then((data) => {
+apiInstance.createLootboxManager(xAuthorization, xWalletDecryptKey, createLootboxManagerRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -45,7 +45,7 @@ apiInstance.createLootboxManager(xAuthorization, xPassword, createLootboxManager
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **createLootboxManagerRequest** | [**CreateLootboxManagerRequest**](CreateLootboxManagerRequest.md)|  | 
 
 ### Return type
@@ -76,8 +76,8 @@ Returns a lootbox manager lootbox object for the provided lootboxManagerLootboxI
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.LootboxesApi();
-let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab ecosystem.
-let lootboxManagerLootboxId = "lootboxManagerLootboxId_example"; // String | Any lootbox manager lootbox id within the MetaFab ecosystem.
+let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab platform.
+let lootboxManagerLootboxId = "lootboxManagerLootboxId_example"; // String | Any lootbox manager lootbox id within the MetaFab platform.
 apiInstance.getLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -91,8 +91,8 @@ apiInstance.getLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId).
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab ecosystem. | 
- **lootboxManagerLootboxId** | **String**| Any lootbox manager lootbox id within the MetaFab ecosystem. | 
+ **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab platform. | 
+ **lootboxManagerLootboxId** | **String**| Any lootbox manager lootbox id within the MetaFab platform. | 
 
 ### Return type
 
@@ -122,7 +122,7 @@ Returns all lootbox manager lootboxes as an array of lootbox objects.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.LootboxesApi();
-let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab ecosystem.
+let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab platform.
 apiInstance.getLootboxManagerLootboxes(lootboxManagerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -136,7 +136,7 @@ apiInstance.getLootboxManagerLootboxes(lootboxManagerId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab ecosystem. | 
+ **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab platform. | 
 
 ### Return type
 
@@ -198,7 +198,7 @@ No authorization required
 
 ## openLootboxManagerLootbox
 
-> [TransactionModel] openLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId, xAuthorization, xPassword)
+> [TransactionModel] openLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId, xAuthorization, xWalletDecryptKey)
 
 Open lootbox manager lootbox
 
@@ -210,11 +210,11 @@ Opens a lootbox manager lootbox. The required input item(s) are burned from the 
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.LootboxesApi();
-let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab ecosystem.
-let lootboxManagerLootboxId = "lootboxManagerLootboxId_example"; // String | Any lootbox manager lootbox id within the MetaFab ecosystem.
+let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab platform.
+let lootboxManagerLootboxId = "lootboxManagerLootboxId_example"; // String | Any lootbox manager lootbox id within the MetaFab platform.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
-apiInstance.openLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId, xAuthorization, xPassword).then((data) => {
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+apiInstance.openLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId, xAuthorization, xWalletDecryptKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -227,10 +227,10 @@ apiInstance.openLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId,
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab ecosystem. | 
- **lootboxManagerLootboxId** | **String**| Any lootbox manager lootbox id within the MetaFab ecosystem. | 
+ **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab platform. | 
+ **lootboxManagerLootboxId** | **String**| Any lootbox manager lootbox id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
 
 ### Return type
 
@@ -248,7 +248,7 @@ No authorization required
 
 ## removeLootboxManagerLootbox
 
-> TransactionModel removeLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId, xAuthorization, xPassword)
+> TransactionModel removeLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId, xAuthorization, xWalletDecryptKey)
 
 Remove lootbox manager lootbox
 
@@ -260,11 +260,11 @@ Removes the provided lootbox by lootboxId from the provided lootbox manager. Rem
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.LootboxesApi();
-let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab ecosystem.
-let lootboxManagerLootboxId = "lootboxManagerLootboxId_example"; // String | Any lootbox manager lootbox id within the MetaFab ecosystem.
+let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab platform.
+let lootboxManagerLootboxId = "lootboxManagerLootboxId_example"; // String | Any lootbox manager lootbox id within the MetaFab platform.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
-apiInstance.removeLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId, xAuthorization, xPassword).then((data) => {
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+apiInstance.removeLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxId, xAuthorization, xWalletDecryptKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -277,10 +277,10 @@ apiInstance.removeLootboxManagerLootbox(lootboxManagerId, lootboxManagerLootboxI
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab ecosystem. | 
- **lootboxManagerLootboxId** | **String**| Any lootbox manager lootbox id within the MetaFab ecosystem. | 
+ **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab platform. | 
+ **lootboxManagerLootboxId** | **String**| Any lootbox manager lootbox id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
 
 ### Return type
 
@@ -298,7 +298,7 @@ No authorization required
 
 ## setLootboxManagerLootbox
 
-> TransactionModel setLootboxManagerLootbox(lootboxManagerId, xAuthorization, xPassword, setLootboxManagerLootboxRequest)
+> TransactionModel setLootboxManagerLootbox(lootboxManagerId, xAuthorization, xWalletDecryptKey, setLootboxManagerLootboxRequest)
 
 Set lootbox manager lootbox
 
@@ -310,11 +310,11 @@ Sets a new lootbox manager lootbox or updates an existing one for the provided i
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.LootboxesApi();
-let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab ecosystem.
+let lootboxManagerId = "lootboxManagerId_example"; // String | Any lootbox manager id within the MetaFab platform.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let setLootboxManagerLootboxRequest = new MetafabJavascript.SetLootboxManagerLootboxRequest(); // SetLootboxManagerLootboxRequest | 
-apiInstance.setLootboxManagerLootbox(lootboxManagerId, xAuthorization, xPassword, setLootboxManagerLootboxRequest).then((data) => {
+apiInstance.setLootboxManagerLootbox(lootboxManagerId, xAuthorization, xWalletDecryptKey, setLootboxManagerLootboxRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -327,9 +327,9 @@ apiInstance.setLootboxManagerLootbox(lootboxManagerId, xAuthorization, xPassword
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab ecosystem. | 
+ **lootboxManagerId** | **String**| Any lootbox manager id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **setLootboxManagerLootboxRequest** | [**SetLootboxManagerLootboxRequest**](SetLootboxManagerLootboxRequest.md)|  | 
 
 ### Return type

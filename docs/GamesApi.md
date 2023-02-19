@@ -114,7 +114,7 @@ Returns a game object for the provided game id.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.GamesApi();
-let gameId = "gameId_example"; // String | Any game id within the MetaFab ecosystem.
+let gameId = "gameId_example"; // String | Any game id within the MetaFab platform.
 apiInstance.getGame(gameId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -128,7 +128,7 @@ apiInstance.getGame(gameId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gameId** | **String**| Any game id within the MetaFab ecosystem. | 
+ **gameId** | **String**| Any game id within the MetaFab platform. | 
 
 ### Return type
 
@@ -146,7 +146,7 @@ No authorization required
 
 ## updateGame
 
-> GameModel updateGame(gameId, xAuthorization, updateGameRequest)
+> UpdateGame200Response updateGame(gameId, xAuthorization, updateGameRequest)
 
 Update game
 
@@ -158,7 +158,7 @@ Update various fields specific to a game. Such as changing its password, resetti
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.GamesApi();
-let gameId = "gameId_example"; // String | Any game id within the MetaFab ecosystem.
+let gameId = "gameId_example"; // String | The game id of the authenticating game.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
 let updateGameRequest = new MetafabJavascript.UpdateGameRequest(); // UpdateGameRequest | 
 apiInstance.updateGame(gameId, xAuthorization, updateGameRequest).then((data) => {
@@ -174,13 +174,13 @@ apiInstance.updateGame(gameId, xAuthorization, updateGameRequest).then((data) =>
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **gameId** | **String**| Any game id within the MetaFab ecosystem. | 
+ **gameId** | **String**| The game id of the authenticating game. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
  **updateGameRequest** | [**UpdateGameRequest**](UpdateGameRequest.md)|  | 
 
 ### Return type
 
-[**GameModel**](GameModel.md)
+[**UpdateGame200Response**](UpdateGame200Response.md)
 
 ### Authorization
 

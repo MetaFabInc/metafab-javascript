@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **verified** | **Boolean** | This field has not had a description added. | [optional] 
 **updatedAt** | **String** | This field has not had a description added. | [optional] 
 **createdAt** | **String** | This field has not had a description added. | [optional] 
+**walletDecryptKey** | **String** | This field has not had a description added. | [optional] 
 **wallet** | [**WalletModel**](WalletModel.md) |  | [optional] 
 **fundingWallet** | [**WalletModel**](WalletModel.md) |  | [optional] 
 

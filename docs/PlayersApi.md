@@ -125,7 +125,7 @@ Returns a player object for the provided player id.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.PlayersApi();
-let playerId = "playerId_example"; // String | Any player id within the MetaFab ecosystem.
+let playerId = "playerId_example"; // String | Any player id within the MetaFab platform.
 apiInstance.getPlayer(playerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -139,7 +139,7 @@ apiInstance.getPlayer(playerId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerId** | **String**| Any player id within the MetaFab ecosystem. | 
+ **playerId** | **String**| Any player id within the MetaFab platform. | 
 
 ### Return type
 
@@ -169,7 +169,7 @@ Returns the latest public and protected data as an object for the provided playe
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.PlayersApi();
-let playerId = "playerId_example"; // String | Any player id within the MetaFab ecosystem.
+let playerId = "playerId_example"; // String | Any player id within the MetaFab platform.
 apiInstance.getPlayerData(playerId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -183,7 +183,7 @@ apiInstance.getPlayerData(playerId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerId** | **String**| Any player id within the MetaFab ecosystem. | 
+ **playerId** | **String**| Any player id within the MetaFab platform. | 
 
 ### Return type
 
@@ -257,8 +257,8 @@ Removes an external wallet from a player account. The player&#39;s wallet is rev
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.PlayersApi();
-let playerId = "playerId_example"; // String | Any player id within the MetaFab ecosystem.
-let playerWalletId = "playerWalletId_example"; // String | Any player wallet id within the MetaFab ecosystem.
+let playerId = "playerId_example"; // String | Any player id within the MetaFab platform.
+let playerWalletId = "playerWalletId_example"; // String | Any player wallet id within the MetaFab platform.
 let removePlayerConnectedWalletRequest = new MetafabJavascript.RemovePlayerConnectedWalletRequest(); // RemovePlayerConnectedWalletRequest | 
 apiInstance.removePlayerConnectedWallet(playerId, playerWalletId, removePlayerConnectedWalletRequest).then(() => {
   console.log('API called successfully.');
@@ -273,8 +273,8 @@ apiInstance.removePlayerConnectedWallet(playerId, playerWalletId, removePlayerCo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerId** | **String**| Any player id within the MetaFab ecosystem. | 
- **playerWalletId** | **String**| Any player wallet id within the MetaFab ecosystem. | 
+ **playerId** | **String**| Any player id within the MetaFab platform. | 
+ **playerWalletId** | **String**| Any player wallet id within the MetaFab platform. | 
  **removePlayerConnectedWalletRequest** | [**RemovePlayerConnectedWalletRequest**](RemovePlayerConnectedWalletRequest.md)|  | 
 
 ### Return type
@@ -305,7 +305,7 @@ Sets an external wallet as the wallet for a player account. The set wallet can t
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.PlayersApi();
-let playerId = "playerId_example"; // String | Any player id within the MetaFab ecosystem.
+let playerId = "playerId_example"; // String | The player id of the authenticating player.
 let xAuthorization = player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `accessToken` of the authenticating player.
 let setPlayerConnectedWalletRequest = new MetafabJavascript.SetPlayerConnectedWalletRequest(); // SetPlayerConnectedWalletRequest | 
 apiInstance.setPlayerConnectedWallet(playerId, xAuthorization, setPlayerConnectedWalletRequest).then((data) => {
@@ -321,7 +321,7 @@ apiInstance.setPlayerConnectedWallet(playerId, xAuthorization, setPlayerConnecte
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerId** | **String**| Any player id within the MetaFab ecosystem. | 
+ **playerId** | **String**| The player id of the authenticating player. | 
  **xAuthorization** | **String**| The &#x60;accessToken&#x60; of the authenticating player. | 
  **setPlayerConnectedWalletRequest** | [**SetPlayerConnectedWalletRequest**](SetPlayerConnectedWalletRequest.md)|  | 
 
@@ -353,7 +353,7 @@ Creates or updates public and/or protected data for the provided playerId. Data 
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.PlayersApi();
-let playerId = "playerId_example"; // String | Any player id within the MetaFab ecosystem.
+let playerId = "playerId_example"; // String | Any player id within the MetaFab platform.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
 let setPlayerDataRequest = new MetafabJavascript.SetPlayerDataRequest(); // SetPlayerDataRequest | 
 apiInstance.setPlayerData(playerId, xAuthorization, setPlayerDataRequest).then((data) => {
@@ -369,7 +369,7 @@ apiInstance.setPlayerData(playerId, xAuthorization, setPlayerDataRequest).then((
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerId** | **String**| Any player id within the MetaFab ecosystem. | 
+ **playerId** | **String**| Any player id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
  **setPlayerDataRequest** | [**SetPlayerDataRequest**](SetPlayerDataRequest.md)|  | 
 
@@ -389,7 +389,7 @@ No authorization required
 
 ## updatePlayer
 
-> PlayerModel updatePlayer(playerId, xAuthorization, updatePlayerRequest)
+> UpdatePlayer200Response updatePlayer(playerId, xAuthorization, updatePlayerRequest)
 
 Update player
 
@@ -401,7 +401,7 @@ Update various fields specific to a player. Such as changing its password and re
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.PlayersApi();
-let playerId = "playerId_example"; // String | Any player id within the MetaFab ecosystem.
+let playerId = "playerId_example"; // String | The player id of the authenticating player.
 let xAuthorization = player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `accessToken` of the authenticating player.
 let updatePlayerRequest = new MetafabJavascript.UpdatePlayerRequest(); // UpdatePlayerRequest | 
 apiInstance.updatePlayer(playerId, xAuthorization, updatePlayerRequest).then((data) => {
@@ -417,13 +417,13 @@ apiInstance.updatePlayer(playerId, xAuthorization, updatePlayerRequest).then((da
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **playerId** | **String**| Any player id within the MetaFab ecosystem. | 
+ **playerId** | **String**| The player id of the authenticating player. | 
  **xAuthorization** | **String**| The &#x60;accessToken&#x60; of the authenticating player. | 
  **updatePlayerRequest** | [**UpdatePlayerRequest**](UpdatePlayerRequest.md)|  | 
 
 ### Return type
 
-[**PlayerModel**](PlayerModel.md)
+[**UpdatePlayer200Response**](UpdatePlayer200Response.md)
 
 ### Authorization
 

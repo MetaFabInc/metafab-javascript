@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ## batchMintCollectionItems
 
-> TransactionModel batchMintCollectionItems(collectionId, xAuthorization, xPassword, batchMintCollectionItemsRequest)
+> TransactionModel batchMintCollectionItems(collectionId, xAuthorization, xWalletDecryptKey, batchMintCollectionItemsRequest)
 
 Batch mint collection items
 
@@ -42,11 +42,11 @@ Creates (mints) the provided itemIds of the specified quantities to the provided
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let batchMintCollectionItemsRequest = new MetafabJavascript.BatchMintCollectionItemsRequest(); // BatchMintCollectionItemsRequest | 
-apiInstance.batchMintCollectionItems(collectionId, xAuthorization, xPassword, batchMintCollectionItemsRequest).then((data) => {
+apiInstance.batchMintCollectionItems(collectionId, xAuthorization, xWalletDecryptKey, batchMintCollectionItemsRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -59,9 +59,9 @@ apiInstance.batchMintCollectionItems(collectionId, xAuthorization, xPassword, ba
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **batchMintCollectionItemsRequest** | [**BatchMintCollectionItemsRequest**](BatchMintCollectionItemsRequest.md)|  | 
 
 ### Return type
@@ -80,7 +80,7 @@ No authorization required
 
 ## batchTransferCollectionItems
 
-> TransactionModel batchTransferCollectionItems(collectionId, xAuthorization, xPassword, batchTransferCollectionItemsRequest)
+> TransactionModel batchTransferCollectionItems(collectionId, xAuthorization, xWalletDecryptKey, batchTransferCollectionItemsRequest)
 
 Batch transfer collection items
 
@@ -92,11 +92,11 @@ Transfers one or multiple items of specified quantities to the provided wallet a
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
 let batchTransferCollectionItemsRequest = new MetafabJavascript.BatchTransferCollectionItemsRequest(); // BatchTransferCollectionItemsRequest | 
-apiInstance.batchTransferCollectionItems(collectionId, xAuthorization, xPassword, batchTransferCollectionItemsRequest).then((data) => {
+apiInstance.batchTransferCollectionItems(collectionId, xAuthorization, xWalletDecryptKey, batchTransferCollectionItemsRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -109,9 +109,9 @@ apiInstance.batchTransferCollectionItems(collectionId, xAuthorization, xPassword
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
  **batchTransferCollectionItemsRequest** | [**BatchTransferCollectionItemsRequest**](BatchTransferCollectionItemsRequest.md)|  | 
 
 ### Return type
@@ -130,7 +130,7 @@ No authorization required
 
 ## burnCollectionItem
 
-> TransactionModel burnCollectionItem(collectionId, collectionItemId, xAuthorization, xPassword, burnCollectionItemRequest)
+> TransactionModel burnCollectionItem(collectionId, collectionItemId, xAuthorization, xWalletDecryptKey, burnCollectionItemRequest)
 
 Burn collection item
 
@@ -142,12 +142,12 @@ Removes (burns) the provided quantity of the collectionItemId from the authentic
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let collectionItemId = 3.4; // Number | Any item id for the collection. Zero, or a positive integer.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
 let burnCollectionItemRequest = new MetafabJavascript.BurnCollectionItemRequest(); // BurnCollectionItemRequest | 
-apiInstance.burnCollectionItem(collectionId, collectionItemId, xAuthorization, xPassword, burnCollectionItemRequest).then((data) => {
+apiInstance.burnCollectionItem(collectionId, collectionItemId, xAuthorization, xWalletDecryptKey, burnCollectionItemRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -160,10 +160,10 @@ apiInstance.burnCollectionItem(collectionId, collectionItemId, xAuthorization, x
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **collectionItemId** | **Number**| Any item id for the collection. Zero, or a positive integer. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
  **burnCollectionItemRequest** | [**BurnCollectionItemRequest**](BurnCollectionItemRequest.md)|  | 
 
 ### Return type
@@ -182,7 +182,7 @@ No authorization required
 
 ## createCollection
 
-> CreateCollection200Response createCollection(xAuthorization, xPassword, createCollectionRequest)
+> CreateCollection200Response createCollection(xAuthorization, xWalletDecryptKey, createCollectionRequest)
 
 Create collection
 
@@ -195,9 +195,9 @@ import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let createCollectionRequest = new MetafabJavascript.CreateCollectionRequest(); // CreateCollectionRequest | 
-apiInstance.createCollection(xAuthorization, xPassword, createCollectionRequest).then((data) => {
+apiInstance.createCollection(xAuthorization, xWalletDecryptKey, createCollectionRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -211,7 +211,7 @@ apiInstance.createCollection(xAuthorization, xPassword, createCollectionRequest)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **createCollectionRequest** | [**CreateCollectionRequest**](CreateCollectionRequest.md)|  | 
 
 ### Return type
@@ -230,7 +230,7 @@ No authorization required
 
 ## createCollectionItem
 
-> TransactionModel createCollectionItem(collectionId, xAuthorization, xPassword, createCollectionItemRequest)
+> TransactionModel createCollectionItem(collectionId, xAuthorization, xWalletDecryptKey, createCollectionItemRequest)
 
 Create collection item
 
@@ -242,11 +242,11 @@ Creates a new item type. Item type creation associates all of the relevant item 
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let createCollectionItemRequest = new MetafabJavascript.CreateCollectionItemRequest(); // CreateCollectionItemRequest | 
-apiInstance.createCollectionItem(collectionId, xAuthorization, xPassword, createCollectionItemRequest).then((data) => {
+apiInstance.createCollectionItem(collectionId, xAuthorization, xWalletDecryptKey, createCollectionItemRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -259,9 +259,9 @@ apiInstance.createCollectionItem(collectionId, xAuthorization, xPassword, create
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **createCollectionItemRequest** | [**CreateCollectionItemRequest**](CreateCollectionItemRequest.md)|  | 
 
 ### Return type
@@ -292,11 +292,11 @@ Returns a boolean (true/false) representing if the provided operatorAddress has 
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let operatorAddress = 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D; // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
 let opts = {
   'address': 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D, // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
-  'walletId': "walletId_example" // String | Any wallet id within the MetaFab ecosystem.
+  'walletId': "walletId_example" // String | Any wallet id within the MetaFab platform.
 };
 apiInstance.getCollectionApproval(collectionId, operatorAddress, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -311,10 +311,10 @@ apiInstance.getCollectionApproval(collectionId, operatorAddress, opts).then((dat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **operatorAddress** | **String**| A valid EVM based address. For example, &#x60;0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D&#x60;. | 
  **address** | **String**| A valid EVM based address. For example, &#x60;0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D&#x60;. | [optional] 
- **walletId** | **String**| Any wallet id within the MetaFab ecosystem. | [optional] 
+ **walletId** | **String**| Any wallet id within the MetaFab platform. | [optional] 
 
 ### Return type
 
@@ -332,7 +332,7 @@ No authorization required
 
 ## getCollectionItem
 
-> Object getCollectionItem(collectionId, collectionItemId)
+> CollectionItem getCollectionItem(collectionId, collectionItemId)
 
 Get collection item
 
@@ -344,7 +344,7 @@ Returns a metadata object for the provided collectionItemId.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let collectionItemId = 3.4; // Number | Any item id for the collection. Zero, or a positive integer.
 apiInstance.getCollectionItem(collectionId, collectionItemId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -359,12 +359,12 @@ apiInstance.getCollectionItem(collectionId, collectionItemId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **collectionItemId** | **Number**| Any item id for the collection. Zero, or a positive integer. | 
 
 ### Return type
 
-**Object**
+[**CollectionItem**](CollectionItem.md)
 
 ### Authorization
 
@@ -390,11 +390,11 @@ Returns the current collection item balance of the provided collectionItemId for
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let collectionItemId = 3.4; // Number | Any item id for the collection. Zero, or a positive integer.
 let opts = {
   'address': 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D, // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
-  'walletId': "walletId_example" // String | Any wallet id within the MetaFab ecosystem.
+  'walletId': "walletId_example" // String | Any wallet id within the MetaFab platform.
 };
 apiInstance.getCollectionItemBalance(collectionId, collectionItemId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -409,10 +409,10 @@ apiInstance.getCollectionItemBalance(collectionId, collectionItemId, opts).then(
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **collectionItemId** | **Number**| Any item id for the collection. Zero, or a positive integer. | 
  **address** | **String**| A valid EVM based address. For example, &#x60;0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D&#x60;. | [optional] 
- **walletId** | **String**| Any wallet id within the MetaFab ecosystem. | [optional] 
+ **walletId** | **String**| Any wallet id within the MetaFab platform. | [optional] 
 
 ### Return type
 
@@ -442,10 +442,10 @@ Returns the current collection item balances of all collection items for the pro
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let opts = {
   'address': 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D, // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
-  'walletId': "walletId_example" // String | Any wallet id within the MetaFab ecosystem.
+  'walletId': "walletId_example" // String | Any wallet id within the MetaFab platform.
 };
 apiInstance.getCollectionItemBalances(collectionId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -460,9 +460,9 @@ apiInstance.getCollectionItemBalances(collectionId, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **address** | **String**| A valid EVM based address. For example, &#x60;0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D&#x60;. | [optional] 
- **walletId** | **String**| Any wallet id within the MetaFab ecosystem. | [optional] 
+ **walletId** | **String**| Any wallet id within the MetaFab platform. | [optional] 
 
 ### Return type
 
@@ -492,7 +492,7 @@ Returns the currency circulating supply of all collection items.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 apiInstance.getCollectionItemSupplies(collectionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -506,7 +506,7 @@ apiInstance.getCollectionItemSupplies(collectionId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
 
 ### Return type
 
@@ -536,11 +536,11 @@ Returns the current circulating supply of the provided collectionItemId.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let collectionItemId = 3.4; // Number | Any item id for the collection. Zero, or a positive integer.
 let opts = {
   'address': 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D, // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
-  'walletId': "walletId_example" // String | Any wallet id within the MetaFab ecosystem.
+  'walletId': "walletId_example" // String | Any wallet id within the MetaFab platform.
 };
 apiInstance.getCollectionItemSupply(collectionId, collectionItemId, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -555,10 +555,10 @@ apiInstance.getCollectionItemSupply(collectionId, collectionItemId, opts).then((
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **collectionItemId** | **Number**| Any item id for the collection. Zero, or a positive integer. | 
  **address** | **String**| A valid EVM based address. For example, &#x60;0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D&#x60;. | [optional] 
- **walletId** | **String**| Any wallet id within the MetaFab ecosystem. | [optional] 
+ **walletId** | **String**| Any wallet id within the MetaFab platform. | [optional] 
 
 ### Return type
 
@@ -588,7 +588,7 @@ Returns a timestamp (in seconds) for when the provided collectionItemId&#39;s tr
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let collectionItemId = 3.4; // Number | Any item id for the collection. Zero, or a positive integer.
 apiInstance.getCollectionItemTimelock(collectionId, collectionItemId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -603,7 +603,7 @@ apiInstance.getCollectionItemTimelock(collectionId, collectionItemId).then((data
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **collectionItemId** | **Number**| Any item id for the collection. Zero, or a positive integer. | 
 
 ### Return type
@@ -622,7 +622,7 @@ No authorization required
 
 ## getCollectionItems
 
-> [Object] getCollectionItems(collectionId)
+> [CollectionItem] getCollectionItems(collectionId)
 
 Get collection items
 
@@ -634,7 +634,7 @@ Returns all collection items as an array of metadata objects.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 apiInstance.getCollectionItems(collectionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -648,11 +648,11 @@ apiInstance.getCollectionItems(collectionId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
 
 ### Return type
 
-**[Object]**
+[**[CollectionItem]**](CollectionItem.md)
 
 ### Authorization
 
@@ -678,11 +678,11 @@ Returns a boolean (true/false) representing if the provided role for this collec
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let role = minter; // String | A valid MetaFab role or bytes string representing a role, such as `0xc9eb32e43bf5ecbceacf00b32281dfc5d6d700a0db676ea26ccf938a385ac3b7`
 let opts = {
   'address': 0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D, // String | A valid EVM based address. For example, `0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D`.
-  'walletId': "walletId_example" // String | Any wallet id within the MetaFab ecosystem.
+  'walletId': "walletId_example" // String | Any wallet id within the MetaFab platform.
 };
 apiInstance.getCollectionRole(collectionId, role, opts).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -697,10 +697,10 @@ apiInstance.getCollectionRole(collectionId, role, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **role** | **String**| A valid MetaFab role or bytes string representing a role, such as &#x60;0xc9eb32e43bf5ecbceacf00b32281dfc5d6d700a0db676ea26ccf938a385ac3b7&#x60; | 
  **address** | **String**| A valid EVM based address. For example, &#x60;0x39cb70F972E0EE920088AeF97Dbe5c6251a9c25D&#x60;. | [optional] 
- **walletId** | **String**| Any wallet id within the MetaFab ecosystem. | [optional] 
+ **walletId** | **String**| Any wallet id within the MetaFab platform. | [optional] 
 
 ### Return type
 
@@ -762,7 +762,7 @@ No authorization required
 
 ## grantCollectionRole
 
-> TransactionModel grantCollectionRole(collectionId, xAuthorization, xPassword, grantCollectionRoleRequest)
+> TransactionModel grantCollectionRole(collectionId, xAuthorization, xWalletDecryptKey, grantCollectionRoleRequest)
 
 Grant collection role
 
@@ -774,11 +774,11 @@ Grants the provided role for the collection to the provided address or address a
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
 let grantCollectionRoleRequest = new MetafabJavascript.GrantCollectionRoleRequest(); // GrantCollectionRoleRequest | 
-apiInstance.grantCollectionRole(collectionId, xAuthorization, xPassword, grantCollectionRoleRequest).then((data) => {
+apiInstance.grantCollectionRole(collectionId, xAuthorization, xWalletDecryptKey, grantCollectionRoleRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -791,9 +791,9 @@ apiInstance.grantCollectionRole(collectionId, xAuthorization, xPassword, grantCo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
  **grantCollectionRoleRequest** | [**GrantCollectionRoleRequest**](GrantCollectionRoleRequest.md)|  | 
 
 ### Return type
@@ -812,7 +812,7 @@ No authorization required
 
 ## mintCollectionItem
 
-> TransactionModel mintCollectionItem(collectionId, collectionItemId, xAuthorization, xPassword, mintCollectionItemRequest)
+> TransactionModel mintCollectionItem(collectionId, collectionItemId, xAuthorization, xWalletDecryptKey, mintCollectionItemRequest)
 
 Mint collection item
 
@@ -824,12 +824,12 @@ Creates (mints) the specified quantity of the provided collectionItemId to the p
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let collectionItemId = 3.4; // Number | Any item id for the collection. Zero, or a positive integer.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let mintCollectionItemRequest = new MetafabJavascript.MintCollectionItemRequest(); // MintCollectionItemRequest | 
-apiInstance.mintCollectionItem(collectionId, collectionItemId, xAuthorization, xPassword, mintCollectionItemRequest).then((data) => {
+apiInstance.mintCollectionItem(collectionId, collectionItemId, xAuthorization, xWalletDecryptKey, mintCollectionItemRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -842,10 +842,10 @@ apiInstance.mintCollectionItem(collectionId, collectionItemId, xAuthorization, x
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **collectionItemId** | **Number**| Any item id for the collection. Zero, or a positive integer. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **mintCollectionItemRequest** | [**MintCollectionItemRequest**](MintCollectionItemRequest.md)|  | 
 
 ### Return type
@@ -864,7 +864,7 @@ No authorization required
 
 ## revokeCollectionRole
 
-> TransactionModel revokeCollectionRole(collectionId, xAuthorization, xPassword, revokeCollectionRoleRequest)
+> TransactionModel revokeCollectionRole(collectionId, xAuthorization, xWalletDecryptKey, revokeCollectionRoleRequest)
 
 Revoke collection role
 
@@ -876,11 +876,11 @@ Revokes the provided role for the collection to the provided address or address 
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
 let revokeCollectionRoleRequest = new MetafabJavascript.RevokeCollectionRoleRequest(); // RevokeCollectionRoleRequest | 
-apiInstance.revokeCollectionRole(collectionId, xAuthorization, xPassword, revokeCollectionRoleRequest).then((data) => {
+apiInstance.revokeCollectionRole(collectionId, xAuthorization, xWalletDecryptKey, revokeCollectionRoleRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -893,9 +893,9 @@ apiInstance.revokeCollectionRole(collectionId, xAuthorization, xPassword, revoke
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
  **revokeCollectionRoleRequest** | [**RevokeCollectionRoleRequest**](RevokeCollectionRoleRequest.md)|  | 
 
 ### Return type
@@ -914,7 +914,7 @@ No authorization required
 
 ## setCollectionApproval
 
-> TransactionModel setCollectionApproval(collectionId, xAuthorization, xPassword, setCollectionApprovalRequest)
+> TransactionModel setCollectionApproval(collectionId, xAuthorization, xWalletDecryptKey, setCollectionApprovalRequest)
 
 Set collection approval
 
@@ -926,11 +926,11 @@ Sets approval for the provided address or wallet address associated with the pro
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
 let setCollectionApprovalRequest = new MetafabJavascript.SetCollectionApprovalRequest(); // SetCollectionApprovalRequest | 
-apiInstance.setCollectionApproval(collectionId, xAuthorization, xPassword, setCollectionApprovalRequest).then((data) => {
+apiInstance.setCollectionApproval(collectionId, xAuthorization, xWalletDecryptKey, setCollectionApprovalRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -943,9 +943,9 @@ apiInstance.setCollectionApproval(collectionId, xAuthorization, xPassword, setCo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
  **setCollectionApprovalRequest** | [**SetCollectionApprovalRequest**](SetCollectionApprovalRequest.md)|  | 
 
 ### Return type
@@ -964,7 +964,7 @@ No authorization required
 
 ## setCollectionItemTimelock
 
-> TransactionModel setCollectionItemTimelock(collectionId, collectionItemId, xAuthorization, xPassword, setCollectionItemTimelockRequest)
+> TransactionModel setCollectionItemTimelock(collectionId, collectionItemId, xAuthorization, xWalletDecryptKey, setCollectionItemTimelockRequest)
 
 Set collection item timelock
 
@@ -976,12 +976,12 @@ Sets the item timelock for the provided collection itemId. The timelock is a uni
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let collectionItemId = 3.4; // Number | Any item id for the collection. Zero, or a positive integer.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let setCollectionItemTimelockRequest = new MetafabJavascript.SetCollectionItemTimelockRequest(); // SetCollectionItemTimelockRequest | 
-apiInstance.setCollectionItemTimelock(collectionId, collectionItemId, xAuthorization, xPassword, setCollectionItemTimelockRequest).then((data) => {
+apiInstance.setCollectionItemTimelock(collectionId, collectionItemId, xAuthorization, xWalletDecryptKey, setCollectionItemTimelockRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -994,10 +994,10 @@ apiInstance.setCollectionItemTimelock(collectionId, collectionItemId, xAuthoriza
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **collectionItemId** | **Number**| Any item id for the collection. Zero, or a positive integer. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **setCollectionItemTimelockRequest** | [**SetCollectionItemTimelockRequest**](SetCollectionItemTimelockRequest.md)|  | 
 
 ### Return type
@@ -1016,7 +1016,7 @@ No authorization required
 
 ## transferCollectionItem
 
-> TransactionModel transferCollectionItem(collectionId, collectionItemId, xAuthorization, xPassword, transferCollectionItemRequest)
+> TransactionModel transferCollectionItem(collectionId, collectionItemId, xAuthorization, xWalletDecryptKey, transferCollectionItemRequest)
 
 Transfer collection item
 
@@ -1028,12 +1028,12 @@ Transfers specified quantity of itemId to the provided wallet address or wallet 
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ItemsApi();
-let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab ecosystem.
+let collectionId = "collectionId_example"; // String | Any collection id within the MetaFab platform.
 let collectionItemId = 3.4; // Number | Any item id for the collection. Zero, or a positive integer.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
 let transferCollectionItemRequest = new MetafabJavascript.TransferCollectionItemRequest(); // TransferCollectionItemRequest | 
-apiInstance.transferCollectionItem(collectionId, collectionItemId, xAuthorization, xPassword, transferCollectionItemRequest).then((data) => {
+apiInstance.transferCollectionItem(collectionId, collectionItemId, xAuthorization, xWalletDecryptKey, transferCollectionItemRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -1046,10 +1046,10 @@ apiInstance.transferCollectionItem(collectionId, collectionItemId, xAuthorizatio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **collectionId** | **String**| Any collection id within the MetaFab ecosystem. | 
+ **collectionId** | **String**| Any collection id within the MetaFab platform. | 
  **collectionItemId** | **Number**| Any item id for the collection. Zero, or a positive integer. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
  **transferCollectionItemRequest** | [**TransferCollectionItemRequest**](TransferCollectionItemRequest.md)|  | 
 
 ### Return type

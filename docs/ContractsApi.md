@@ -117,7 +117,7 @@ Oftentimes you&#39;ll want to query and retrieve some data from a contract. This
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ContractsApi();
-let contractId = "contractId_example"; // String | Any contract id within the MetaFab ecosystem.
+let contractId = "contractId_example"; // String | Any contract id within the MetaFab platform.
 let func = "func_example"; // String | A contract function name. This can be any valid function from the the ABI of the contract you are interacting with. For example, `balanceOf`.
 let opts = {
   'args': 123,"Hello",false // String | A comma seperated list of basic data type arguments. This is optional and only necessary if the function being invoked requires arguments per the contract ABI. For example, `123,\"Hello\",false`.
@@ -135,7 +135,7 @@ apiInstance.readContract(contractId, func, opts).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contractId** | **String**| Any contract id within the MetaFab ecosystem. | 
+ **contractId** | **String**| Any contract id within the MetaFab platform. | 
  **func** | **String**| A contract function name. This can be any valid function from the the ABI of the contract you are interacting with. For example, &#x60;balanceOf&#x60;. | 
  **args** | **String**| A comma seperated list of basic data type arguments. This is optional and only necessary if the function being invoked requires arguments per the contract ABI. For example, &#x60;123,\&quot;Hello\&quot;,false&#x60;. | [optional] 
 
@@ -155,7 +155,7 @@ No authorization required
 
 ## transferContractOwnership
 
-> TransactionModel transferContractOwnership(contractId, xAuthorization, xPassword, transferContractOwnershipRequest)
+> TransactionModel transferContractOwnership(contractId, xAuthorization, xWalletDecryptKey, transferContractOwnershipRequest)
 
 Transfer contract ownership
 
@@ -167,11 +167,11 @@ Transfer ownership and control of a MetaFab deployed smart contract to another w
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ContractsApi();
-let contractId = "contractId_example"; // String | Any contract id within the MetaFab ecosystem.
+let contractId = "contractId_example"; // String | Any contract id within the MetaFab platform.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let transferContractOwnershipRequest = new MetafabJavascript.TransferContractOwnershipRequest(); // TransferContractOwnershipRequest | 
-apiInstance.transferContractOwnership(contractId, xAuthorization, xPassword, transferContractOwnershipRequest).then((data) => {
+apiInstance.transferContractOwnership(contractId, xAuthorization, xWalletDecryptKey, transferContractOwnershipRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -184,9 +184,9 @@ apiInstance.transferContractOwnership(contractId, xAuthorization, xPassword, tra
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contractId** | **String**| Any contract id within the MetaFab ecosystem. | 
+ **contractId** | **String**| Any contract id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **transferContractOwnershipRequest** | [**TransferContractOwnershipRequest**](TransferContractOwnershipRequest.md)|  | 
 
 ### Return type
@@ -205,7 +205,7 @@ No authorization required
 
 ## upgradeContractTrustedForwarder
 
-> TransactionModel upgradeContractTrustedForwarder(contractId, xAuthorization, xPassword, upgradeContractTrustedForwarderRequest)
+> TransactionModel upgradeContractTrustedForwarder(contractId, xAuthorization, xWalletDecryptKey, upgradeContractTrustedForwarderRequest)
 
 Upgrade contract trusted forwarder
 
@@ -217,11 +217,11 @@ In rare circumstances, you may need to upgrade the underlying trusted forwarder 
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ContractsApi();
-let contractId = "contractId_example"; // String | Any contract id within the MetaFab ecosystem.
+let contractId = "contractId_example"; // String | Any contract id within the MetaFab platform.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let upgradeContractTrustedForwarderRequest = new MetafabJavascript.UpgradeContractTrustedForwarderRequest(); // UpgradeContractTrustedForwarderRequest | 
-apiInstance.upgradeContractTrustedForwarder(contractId, xAuthorization, xPassword, upgradeContractTrustedForwarderRequest).then((data) => {
+apiInstance.upgradeContractTrustedForwarder(contractId, xAuthorization, xWalletDecryptKey, upgradeContractTrustedForwarderRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -234,9 +234,9 @@ apiInstance.upgradeContractTrustedForwarder(contractId, xAuthorization, xPasswor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contractId** | **String**| Any contract id within the MetaFab ecosystem. | 
+ **contractId** | **String**| Any contract id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **upgradeContractTrustedForwarderRequest** | [**UpgradeContractTrustedForwarderRequest**](UpgradeContractTrustedForwarderRequest.md)|  | 
 
 ### Return type
@@ -255,7 +255,7 @@ No authorization required
 
 ## writeContract
 
-> TransactionModel writeContract(contractId, xAuthorization, xPassword, writeContractRequest)
+> TransactionModel writeContract(contractId, xAuthorization, xWalletDecryptKey, writeContractRequest)
 
 Write contract data
 
@@ -267,11 +267,11 @@ MetaFab&#39;s convenience endpoints for contract interactions may not be flexibl
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ContractsApi();
-let contractId = "contractId_example"; // String | Any contract id within the MetaFab ecosystem.
+let contractId = "contractId_example"; // String | Any contract id within the MetaFab platform.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
 let writeContractRequest = new MetafabJavascript.WriteContractRequest(); // WriteContractRequest | 
-apiInstance.writeContract(contractId, xAuthorization, xPassword, writeContractRequest).then((data) => {
+apiInstance.writeContract(contractId, xAuthorization, xWalletDecryptKey, writeContractRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -284,9 +284,9 @@ apiInstance.writeContract(contractId, xAuthorization, xPassword, writeContractRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **contractId** | **String**| Any contract id within the MetaFab ecosystem. | 
+ **contractId** | **String**| Any contract id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
  **writeContractRequest** | [**WriteContractRequest**](WriteContractRequest.md)|  | 
 
 ### Return type

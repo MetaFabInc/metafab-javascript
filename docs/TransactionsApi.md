@@ -22,7 +22,7 @@ Returns an executed transaction object for the provided transactionId. Transacti
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.TransactionsApi();
-let transactionId = "transactionId_example"; // String | Any transaction id within the MetaFab ecosystem.
+let transactionId = "transactionId_example"; // String | Any transaction id within the MetaFab platform.
 apiInstance.getTransaction(transactionId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -36,7 +36,7 @@ apiInstance.getTransaction(transactionId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **transactionId** | **String**| Any transaction id within the MetaFab ecosystem. | 
+ **transactionId** | **String**| Any transaction id within the MetaFab platform. | 
 
 ### Return type
 

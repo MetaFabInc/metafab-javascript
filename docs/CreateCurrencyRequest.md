@@ -14,7 +14,21 @@ Name | Type | Description | Notes
 ## Enum: ChainEnum
 
 
+* `ARBITRUM` (value: `"ARBITRUM"`)
+
+* `ARBITRUMGOERLI` (value: `"ARBITRUMGOERLI"`)
+
+* `ARBITRUMNOVA` (value: `"ARBITRUMNOVA"`)
+
+* `AVALANCHE` (value: `"AVALANCHE"`)
+
+* `AVALANCHEFUJI` (value: `"AVALANCHEFUJI"`)
+
 * `ETHEREUM` (value: `"ETHEREUM"`)
+
+* `FANTOM` (value: `"FANTOM"`)
+
+* `FANTOMTEST` (value: `"FANTOMTEST"`)
 
 * `GOERLI` (value: `"GOERLI"`)
 
@@ -22,9 +36,9 @@ Name | Type | Description | Notes
 
 * `MATICMUMBAI` (value: `"MATICMUMBAI"`)
 
-* `ARBITRUM` (value: `"ARBITRUM"`)
+* `THUNDERCORE` (value: `"THUNDERCORE"`)
 
-* `ARBITRUMGOERLI` (value: `"ARBITRUMGOERLI"`)
+* `THUNDERCORETESTNET` (value: `"THUNDERCORETESTNET"`)
 
 
 

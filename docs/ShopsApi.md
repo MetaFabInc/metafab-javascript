@@ -5,7 +5,7 @@ All URIs are relative to *https://api.trymetafab.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createShop**](ShopsApi.md#createShop) | **POST** /v1/shops | Create shop
-[**getShopOffer**](ShopsApi.md#getShopOffer) | **GET** /v1/shops/{shopId}/items/{shopOfferId} | Get shop offer
+[**getShopOffer**](ShopsApi.md#getShopOffer) | **GET** /v1/shops/{shopId}/offers/{shopOfferId} | Get shop offer
 [**getShopOffers**](ShopsApi.md#getShopOffers) | **GET** /v1/shops/{shopId}/offers | Get shop offers
 [**getShops**](ShopsApi.md#getShops) | **GET** /v1/shops | Get shops
 [**removeShopOffer**](ShopsApi.md#removeShopOffer) | **DELETE** /v1/shops/{shopId}/offers/{shopOfferId} | Remove shop offer
@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 ## createShop
 
-> CreateShop200Response createShop(xAuthorization, xPassword, createShopRequest)
+> CreateShop200Response createShop(xAuthorization, xWalletDecryptKey, createShopRequest)
 
 Create shop
 
@@ -30,9 +30,9 @@ import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ShopsApi();
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let createShopRequest = new MetafabJavascript.CreateShopRequest(); // CreateShopRequest | 
-apiInstance.createShop(xAuthorization, xPassword, createShopRequest).then((data) => {
+apiInstance.createShop(xAuthorization, xWalletDecryptKey, createShopRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -46,7 +46,7 @@ apiInstance.createShop(xAuthorization, xPassword, createShopRequest).then((data)
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **createShopRequest** | [**CreateShopRequest**](CreateShopRequest.md)|  | 
 
 ### Return type
@@ -77,7 +77,7 @@ Returns a shop offer object for the provided shopOfferId.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ShopsApi();
-let shopId = "shopId_example"; // String | Any shop id within the MetaFab ecosystem.
+let shopId = "shopId_example"; // String | Any shop id within the MetaFab platform.
 let shopOfferId = "shopOfferId_example"; // String | Any offer id for the shop. Zero, or a positive integer.
 apiInstance.getShopOffer(shopId, shopOfferId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
@@ -92,7 +92,7 @@ apiInstance.getShopOffer(shopId, shopOfferId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shopId** | **String**| Any shop id within the MetaFab ecosystem. | 
+ **shopId** | **String**| Any shop id within the MetaFab platform. | 
  **shopOfferId** | **String**| Any offer id for the shop. Zero, or a positive integer. | 
 
 ### Return type
@@ -123,7 +123,7 @@ Returns all shop offers as an array of shop offer objects.
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ShopsApi();
-let shopId = "shopId_example"; // String | Any shop id within the MetaFab ecosystem.
+let shopId = "shopId_example"; // String | Any shop id within the MetaFab platform.
 apiInstance.getShopOffers(shopId).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
@@ -137,7 +137,7 @@ apiInstance.getShopOffers(shopId).then((data) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shopId** | **String**| Any shop id within the MetaFab ecosystem. | 
+ **shopId** | **String**| Any shop id within the MetaFab platform. | 
 
 ### Return type
 
@@ -199,7 +199,7 @@ No authorization required
 
 ## removeShopOffer
 
-> TransactionModel removeShopOffer(shopId, shopOfferId, xAuthorization, xPassword)
+> TransactionModel removeShopOffer(shopId, shopOfferId, xAuthorization, xWalletDecryptKey)
 
 Remove shop offer
 
@@ -211,11 +211,11 @@ Removes the provided offer by offerId from the provided shop. Removed offers can
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ShopsApi();
-let shopId = "shopId_example"; // String | Any shop id within the MetaFab ecosystem.
+let shopId = "shopId_example"; // String | Any shop id within the MetaFab platform.
 let shopOfferId = "shopOfferId_example"; // String | Any offer id for the shop. Zero, or a positive integer.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
-apiInstance.removeShopOffer(shopId, shopOfferId, xAuthorization, xPassword).then((data) => {
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+apiInstance.removeShopOffer(shopId, shopOfferId, xAuthorization, xWalletDecryptKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -228,10 +228,10 @@ apiInstance.removeShopOffer(shopId, shopOfferId, xAuthorization, xPassword).then
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shopId** | **String**| Any shop id within the MetaFab ecosystem. | 
+ **shopId** | **String**| Any shop id within the MetaFab platform. | 
  **shopOfferId** | **String**| Any offer id for the shop. Zero, or a positive integer. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
 
 ### Return type
 
@@ -249,7 +249,7 @@ No authorization required
 
 ## setShopOffer
 
-> TransactionModel setShopOffer(shopId, xAuthorization, xPassword, setShopOfferRequest)
+> TransactionModel setShopOffer(shopId, xAuthorization, xWalletDecryptKey, setShopOfferRequest)
 
 Set shop offer
 
@@ -261,11 +261,11 @@ Sets a new shop offer or updates an existing one for the provided id. Shop offer
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ShopsApi();
-let shopId = "shopId_example"; // String | Any shop id within the MetaFab ecosystem.
+let shopId = "shopId_example"; // String | Any shop id within the MetaFab platform.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let setShopOfferRequest = new MetafabJavascript.SetShopOfferRequest(); // SetShopOfferRequest | 
-apiInstance.setShopOffer(shopId, xAuthorization, xPassword, setShopOfferRequest).then((data) => {
+apiInstance.setShopOffer(shopId, xAuthorization, xWalletDecryptKey, setShopOfferRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -278,9 +278,9 @@ apiInstance.setShopOffer(shopId, xAuthorization, xPassword, setShopOfferRequest)
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shopId** | **String**| Any shop id within the MetaFab ecosystem. | 
+ **shopId** | **String**| Any shop id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **setShopOfferRequest** | [**SetShopOfferRequest**](SetShopOfferRequest.md)|  | 
 
 ### Return type
@@ -299,7 +299,7 @@ No authorization required
 
 ## useShopOffer
 
-> TransactionModel useShopOffer(shopId, shopOfferId, xAuthorization, xPassword)
+> TransactionModel useShopOffer(shopId, shopOfferId, xAuthorization, xWalletDecryptKey)
 
 Use shop offer
 
@@ -311,11 +311,11 @@ Uses a shop offer. The required (input) item(s) and/or currency are removed from
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ShopsApi();
-let shopId = "shopId_example"; // String | Any shop id within the MetaFab ecosystem.
+let shopId = "shopId_example"; // String | Any shop id within the MetaFab platform.
 let shopOfferId = "shopOfferId_example"; // String | Any offer id for the shop. Zero, or a positive integer.
 let xAuthorization = ["game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP","player_at_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP"]; // String | The `secretKey` of a specific game or the `accessToken` of a specific player.
-let xPassword = mySecurePassword; // String | The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
-apiInstance.useShopOffer(shopId, shopOfferId, xAuthorization, xPassword).then((data) => {
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet.
+apiInstance.useShopOffer(shopId, shopOfferId, xAuthorization, xWalletDecryptKey).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -328,10 +328,10 @@ apiInstance.useShopOffer(shopId, shopOfferId, xAuthorization, xPassword).then((d
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shopId** | **String**| Any shop id within the MetaFab ecosystem. | 
+ **shopId** | **String**| Any shop id within the MetaFab platform. | 
  **shopOfferId** | **String**| Any offer id for the shop. Zero, or a positive integer. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of a specific game or the &#x60;accessToken&#x60; of a specific player. | 
- **xPassword** | **String**| The password of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game or player. Required to decrypt and perform blockchain transactions with the game or player primary wallet. | 
 
 ### Return type
 
@@ -349,7 +349,7 @@ No authorization required
 
 ## withdrawFromShop
 
-> TransactionModel withdrawFromShop(shopId, xAuthorization, xPassword, withdrawFromShopRequest)
+> TransactionModel withdrawFromShop(shopId, xAuthorization, xWalletDecryptKey, withdrawFromShopRequest)
 
 Withdraw from shop
 
@@ -361,11 +361,11 @@ Withdraws native token, currency or items from a shop. Whenever a shop offer has
 import MetafabJavascript from 'metafab-javascript';
 
 let apiInstance = new MetafabJavascript.ShopsApi();
-let shopId = "shopId_example"; // String | Any shop id within the MetaFab ecosystem.
+let shopId = "shopId_example"; // String | Any shop id within the MetaFab platform.
 let xAuthorization = game_sk_02z4Mv3c85Ig0gNowY9Dq0N2kjb1xwzr27ArLE0669RrRI6dLf822iPO26K1p1FP; // String | The `secretKey` of the authenticating game.
-let xPassword = mySecurePassword; // String | The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
+let xWalletDecryptKey = AXNP8MKb+5SbBtHWrZu5KHh5/BomXY/dMRG/BDUn7a4=; // String | The `walletDecryptKey` of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet.
 let withdrawFromShopRequest = new MetafabJavascript.WithdrawFromShopRequest(); // WithdrawFromShopRequest | 
-apiInstance.withdrawFromShop(shopId, xAuthorization, xPassword, withdrawFromShopRequest).then((data) => {
+apiInstance.withdrawFromShop(shopId, xAuthorization, xWalletDecryptKey, withdrawFromShopRequest).then((data) => {
   console.log('API called successfully. Returned data: ' + data);
 }, (error) => {
   console.error(error);
@@ -378,9 +378,9 @@ apiInstance.withdrawFromShop(shopId, xAuthorization, xPassword, withdrawFromShop
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shopId** | **String**| Any shop id within the MetaFab ecosystem. | 
+ **shopId** | **String**| Any shop id within the MetaFab platform. | 
  **xAuthorization** | **String**| The &#x60;secretKey&#x60; of the authenticating game. | 
- **xPassword** | **String**| The password of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
+ **xWalletDecryptKey** | **String**| The &#x60;walletDecryptKey&#x60; of the authenticating game. Required to decrypt and perform blockchain transactions with the game primary wallet. | 
  **withdrawFromShopRequest** | [**WithdrawFromShopRequest**](WithdrawFromShopRequest.md)|  | 
 
 ### Return type
